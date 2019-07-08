@@ -33,4 +33,4 @@ To use it, include the following into your pom:
 from the JARs contained in the sling/ directory, and might thus have omissions and can contain JARs not actually
 deployed as a bundle. They are currently not cross-checked with the [console bundle listing](http://localhost:9090/system/console/bundles) .
 
-TODO: cross check with bundle listing.
+TODO: cross check with bundle listing  http://localhost:9090/system/console/bundles.json 
