@@ -1,8 +1,8 @@
 {
-  "status": "Bundle information: 167 bundles in total - all 167 bundles active.",
+  "status": "Bundle information: 173 bundles in total - all 173 bundles active.",
   "s": [
-    167,
-    166,
+    173,
+    172,
     1,
     0,
     0
@@ -1367,6 +1367,66 @@
       "version": "2.2",
       "symbolicName": "org.apache.commons.math",
       "category": ""
+    },
+    {
+      "id": 89,
+      "name": "Composum Core Configuration",
+      "fragment": false,
+      "stateRaw": 32,
+      "state": "Active",
+      "version": "1.9.2",
+      "symbolicName": "com.composum.core.config",
+      "category": "composum,core"
+    },
+    {
+      "id": 90,
+      "name": "Composum Core Console",
+      "fragment": false,
+      "stateRaw": 32,
+      "state": "Active",
+      "version": "1.9.2",
+      "symbolicName": "com.composum.core.console",
+      "category": "composum,core"
+    },
+    {
+      "id": 91,
+      "name": "Composum Core JS Libraries",
+      "fragment": false,
+      "stateRaw": 32,
+      "state": "Active",
+      "version": "1.9.2",
+      "symbolicName": "com.composum.core.jslibs",
+      "category": "composum,core"
+    },
+    {
+      "id": 88,
+      "name": "Composum Core Sling API",
+      "fragment": false,
+      "stateRaw": 32,
+      "state": "Active",
+      "version": "1.9.2",
+      "symbolicName": "com.composum.core.commons",
+      "category": "composum,core"
+    },
+    {
+      "id": 92,
+      "name": "Composum Package Manager",
+      "fragment": false,
+      "stateRaw": 32,
+      "state": "Active",
+      "version": "1.9.2",
+      "symbolicName": "com.composum.core.pckgmgr",
+      "category": "composum,core"
+    },
+    {
+      "id": 93,
+      "name": "Composum User Managmenent",
+      "fragment": false,
+      "stateRaw": 32,
+      "state": "Active",
+      "version": "1.9.2",
+      "symbolicName": "com.composum.core.usermgnt",
+      "category": "composum,core"
     },
     {
       "id": 55,
