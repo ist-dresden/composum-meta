@@ -43,6 +43,8 @@
         <sling.starter.version>11</sling.starter.version>
         <sling.starter.dependency.version>11-SNAPSHOT</sling.starter.dependency.version>
 
+        <!-- Some software versions -->
+        <com.spotify.dockerfile.version>1.4.10</com.spotify.dockerfile.version>
     </properties>
 
     <distributionManagement>
@@ -61,10 +63,36 @@
         <dependencies>
             <dependency>
                 <groupId>com.composum.meta.sling.dependencies</groupId>
-                <artifactId>sling-starter-dependencies</artifactId>
-                <version>11-SNAPSHOT</version>
+                <artifactId>sling-starter-dependencies-11</artifactId>
+                <version>1.0-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- Additional Sling modules not deployed in Sling Starter -->
+
+            <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.tenant -->
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.tenant</artifactId>
+                <version>1.1.4</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.servlet-helpers -->
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.servlet-helpers</artifactId>
+                <version>1.1.10</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.commons.json -->
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.json</artifactId>
+                <version>2.0.20</version>
+                <scope>provided</scope>
             </dependency>
 
             <!-- General dependencies that are not deployed on Sling -->
@@ -333,6 +361,19 @@
 
             </plugins>
         </pluginManagement>
+
+        <extensions>
+            <extension>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-extension</artifactId>
+                <version>${com.spotify.dockerfile.version}</version>
+            </extension>
+            <extension>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${com.spotify.dockerfile.version}</version>
+            </extension>
+        </extensions>
     </build>
 
     <profiles>

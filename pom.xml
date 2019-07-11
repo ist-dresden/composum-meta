@@ -13,8 +13,8 @@
     <url>https://github.com/ist-dresden/composum-meta</url>
 
     <modules>
-        <module>sling/starter/dependencies/11</module>
-        <module>ist/parent/2</module>
+        <module>sling/starter/dependencies</module>
+        <module>ist/parent</module>
         <module>archetypes</module>
     </modules>
 

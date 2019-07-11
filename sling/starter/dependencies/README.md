@@ -11,3 +11,8 @@ a new version of the `sling-starter-dependencies` for another Sling Starter jar.
 
 The Composum Nodes dependencies are omitted here, since this is primarily used to specify Sling dependencies
 within the Composum Suite.
+
+
+## Helpful command lines
+
+    sed -e '/Imported Packages:/,/^        /{ d; }; /Import-Package:/{d;};/Export-Package:/{d;}' < configuration-status-withcomposum.txt > configuration-status-importsdeleted.txt
