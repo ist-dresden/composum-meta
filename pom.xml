@@ -15,6 +15,7 @@
     <modules>
         <module>sling/starter/dependencies/11</module>
         <module>ist/parent/2</module>
+        <module>archetypes</module>
     </modules>
 
     <properties>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.composum.meta.ist</groupId>
+    <artifactId>parent-2-public</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.composum.meta.ist.archetype</groupId>
+  <artifactId>composum-bundle-archetype</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>maven-archetype</packaging>
+
+  <name>Composum Archetype for Bundles</name>
+  <description>Platform Commons classes and services</description>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>3.1.0</version>
+      </extension>
+    </extensions>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-archetype-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <url>https://github.com/ist-dresden/composum/composum-sling-platform-commons/composum-sling-platform-commons-bundle</url>
+
+  <developers>
+    <developer>
+      <name>Ralf Wunsch</name>
+      <email>r.wunsch@ist-software.com</email>
+      <organization>IST GmbH Dresden</organization>
+      <organizationUrl>http://www.ist-software.com</organizationUrl>
+    </developer>
+    <developer>
+      <name>Hans-Peter Störr</name>
+      <email>hp.stoerr@ist-software.com</email>
+      <organization>IST GmbH Dresden</organization>
+      <organizationUrl>http://www.ist-software.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+</project>
