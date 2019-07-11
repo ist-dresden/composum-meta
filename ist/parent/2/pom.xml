@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.composum.meta.ist</groupId>
-    <artifactId>parent</artifactId>
-    <version>2.0-SNAPSHOT</version>
+    <artifactId>parent-2</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>IST Parent POM</name>
@@ -240,6 +240,7 @@
                     <groupId>org.apache.sling</groupId>
                     <artifactId>maven-sling-plugin</artifactId>
                     <version>2.3.8</version>
+                    <!-- Caution: versions above 2.4 seem not to work without further investigation. -->
                     <configuration>
                         <skip>true</skip>
                         <slingUrl>${sling.scheme}://${sling.host}:${sling.port}${sling.context}/system/console/install
