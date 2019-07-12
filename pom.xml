@@ -3,6 +3,13 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.composum.meta.ist</groupId>
+        <artifactId>parent-2-public</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>ist/parent/2/public</relativePath>
+    </parent>
+
     <groupId>com.composum.meta</groupId>
     <artifactId>composum-meta-root</artifactId>
     <packaging>pom</packaging>
