@@ -295,26 +295,6 @@
                     <version>3.1.2</version>
                 </plugin>
 
-                <!-- https://mvnrepository.com/artifact/org.apache.felix/maven-scr-plugin -->
-                <plugin>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>maven-scr-plugin</artifactId>
-                    <version>1.26.2</version>
-                    <executions>
-                        <execution>
-                            <id>generate-scr-scrdescriptor</id>
-                            <goals>
-                                <goal>scr</goal>
-                            </goals>
-                            <configuration>
-                                <properties>
-                                    <service.vendor>IST GmbH Dresden</service.vendor>
-                                </properties>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-
                 <!-- https://mvnrepository.com/artifact/nl.geodienstencentrum.maven/sass-maven-plugin -->
                 <plugin>
                     <groupId>nl.geodienstencentrum.maven</groupId>
