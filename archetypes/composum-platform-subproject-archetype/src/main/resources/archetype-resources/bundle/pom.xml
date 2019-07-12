@@ -123,14 +123,6 @@
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.annotation</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.component.annotations</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.metatype.annotations</artifactId>
-        </dependency>
 
         <!-- Web Application API -->
         <dependency>
