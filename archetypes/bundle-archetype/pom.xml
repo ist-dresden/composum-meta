@@ -36,7 +36,7 @@
     </pluginManagement>
   </build>
 
-  <url>https://github.com/ist-dresden/composum/composum-sling-platform-commons/composum-sling-platform-commons-bundle</url>
+  <url>https://github.com/ist-dresden/composum/composum-platform-commons/composum-platform-commons-bundle</url>
 
   <developers>
     <developer>
