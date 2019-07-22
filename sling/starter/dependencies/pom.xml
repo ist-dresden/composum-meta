@@ -6,7 +6,7 @@
 
     <groupId>com.composum.meta.sling.dependencies</groupId>
     <artifactId>sling-starter-dependencies-parent</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Parent for collection of artefacts specifying bundles included in the Sling Starter versions</name>

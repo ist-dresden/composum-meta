@@ -7,11 +7,11 @@
     <parent>
         <groupId>com.composum.meta.sling.dependencies</groupId>
         <artifactId>sling-starter-dependencies-parent</artifactId>
-        <version>1.0</version>
+        <version>1.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>sling-starter-dependencies-11</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Bundles included in the Sling Starter version 11</name>
