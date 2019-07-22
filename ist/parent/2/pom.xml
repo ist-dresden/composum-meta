@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.composum.meta.ist</groupId>
+    <parent>
+        <groupId>com.composum.meta.ist</groupId>
+        <artifactId>parent-root</artifactId>
+        <version>1.0</version>
+    </parent>
+
     <artifactId>parent-2</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
     <name>IST Parent POM</name>
@@ -30,41 +35,13 @@
         </developer>
     </developers>
 
-    <properties>
-        <source.encoding>UTF-8</source.encoding>
-        <java.source>1.8</java.source>
-        <java.target>1.8</java.target>
-        <maven.compiler.source>${java.source}</maven.compiler.source>
-        <maven.compiler.target>${java.target}</maven.compiler.target>
-
-        <package.company>IST GmbH Dresden</package.company>
-        <package.install>/bin/cpm/package.service.html</package.install>
-
-        <sling.starter.version>11</sling.starter.version>
-        <sling.starter.dependency.version>11-SNAPSHOT</sling.starter.dependency.version>
-
-        <!-- Some software versions -->
-        <com.spotify.dockerfile.version>1.4.10</com.spotify.dockerfile.version>
-    </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>archiva</id>
-            <url>https://build.ist-software.com/archiva/repository/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>archiva</id>
-            <url>https://build.ist-software.com/archiva/repository/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <!-- TODO: dependencymanagement, pluginmanagement -->
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.composum.meta.sling.dependencies</groupId>
                 <artifactId>sling-starter-dependencies-11</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>1.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

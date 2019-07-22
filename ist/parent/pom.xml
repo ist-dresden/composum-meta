@@ -4,21 +4,45 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.composum.meta.ist</groupId>
-        <artifactId>parent-2</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <relativePath>2</relativePath>
-    </parent>
-
     <groupId>com.composum.meta.ist</groupId>
     <artifactId>parent-root</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
     <name>IST Parent ROOT POM</name>
     <description>Root for Parent-POM Projects of the IST Gmbh Dresden</description>
     <url>https://www.ist-software.com/</url>
+
+    <properties>
+        <release.repository.id>ossrh</release.repository.id>
+        <release.repository.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</release.repository.url>
+
+        <source.encoding>UTF-8</source.encoding>
+        <java.source>1.8</java.source>
+        <java.target>1.8</java.target>
+        <maven.compiler.source>${java.source}</maven.compiler.source>
+        <maven.compiler.target>${java.target}</maven.compiler.target>
+
+        <package.company>IST GmbH Dresden</package.company>
+        <package.install>/bin/cpm/package.service.html</package.install>
+
+        <sling.starter.version>11</sling.starter.version>
+        <sling.starter.dependency.version>11-SNAPSHOT</sling.starter.dependency.version>
+
+        <!-- Some software versions -->
+        <com.spotify.dockerfile.version>1.4.10</com.spotify.dockerfile.version>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>${release.repository.id}</id>
+            <url>${release.repository.url}</url>
+        </repository>
+        <snapshotRepository>
+            <id>archiva</id>
+            <url>https://build.ist-software.com/archiva/repository/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <modules>
         <module>2</module>

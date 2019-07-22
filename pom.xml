@@ -22,7 +22,7 @@
     <modules>
         <module>sling/starter/dependencies</module>
         <module>ist/parent</module>
-        <module>archetypes</module>
+        <!--module>archetypes</module-->
     </modules>
 
     <properties>
