@@ -1,76 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.composum.meta.ist</groupId>
-    <artifactId>parent</artifactId>
-    <version>2.0-SNAPSHOT</version>
+    <parent>
+        <groupId>com.composum.meta.ist</groupId>
+        <artifactId>parent-root</artifactId>
+        <version>1.1</version>
+    </parent>
+
+    <artifactId>parent-2</artifactId>
     <packaging>pom</packaging>
 
     <name>IST Parent POM</name>
     <description>Parent-POM for projects of the IST Gmbh Dresden</description>
     <url>https://www.ist-software.com/</url>
 
-    <!-- TODO search correct licence -->
-
-    <developers>
-        <developer>
-            <name>Ralf Wunsch</name>
-            <email>r.wunsch@ist-software.com</email>
-            <organization>IST GmbH Dresden</organization>
-            <organizationUrl>http://www.ist-software.com</organizationUrl>
-        </developer>
-        <developer>
-            <name>Hans-Peter Störr</name>
-            <email>hp.stoerr@ist-software.com</email>
-            <organization>IST GmbH Dresden</organization>
-            <organizationUrl>http://www.ist-software.com</organizationUrl>
-        </developer>
-    </developers>
-
-    <properties>
-        <source.encoding>UTF-8</source.encoding>
-        <java.source>1.8</java.source>
-        <java.target>1.8</java.target>
-        <maven.compiler.source>${java.source}</maven.compiler.source>
-        <maven.compiler.target>${java.target}</maven.compiler.target>
-
-        <package.company>IST GmbH Dresden</package.company>
-        <package.install>/bin/cpm/package.service.html</package.install>
-
-        <sling.starter.version>11</sling.starter.version>
-        <sling.starter.dependency.version>11-SNAPSHOT</sling.starter.dependency.version>
-
-    </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>archiva</id>
-            <url>https://build.ist-software.com/archiva/repository/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>archiva</id>
-            <url>https://build.ist-software.com/archiva/repository/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <!-- TODO: dependencymanagement, pluginmanagement -->
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.composum.meta.sling.dependencies</groupId>
-                <artifactId>sling-starter-dependencies</artifactId>
-                <version>11-SNAPSHOT</version>
+                <artifactId>sling-starter-dependencies-11</artifactId>
+                <version>1.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
+            <!-- Additional Sling modules not deployed in Sling Starter -->
+
+            <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.tenant -->
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.tenant</artifactId>
+                <version>1.1.4</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.servlet-helpers -->
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.servlet-helpers</artifactId>
+                <version>1.1.10</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.commons.json -->
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.json</artifactId>
+                <version>2.0.20</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+            <!-- gson is not usually deployed in launchpad, but exported from Composum Nodes. -->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.8.5</version>
+                <scope>provided</scope>
+            </dependency>
+
             <!-- General dependencies that are not deployed on Sling -->
+
+            <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>1.9.3</version>
+            </dependency>
+
+            <!-- Java Annotations -->
+            <!-- https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>3.0.2</version>
+                <scope>provided</scope>
+                <optional>true</optional><!-- needed only for annotations -->
+            </dependency>
+            <!-- javax.annotation-api specifies some annotations which are excluded on Java 11 (javax.annotation.PostConstruct etc.): -->
+            <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.3.2</version>
+                <scope>provided</scope>
+                <optional>true</optional><!-- needed only for annotations -->
+            </dependency>
 
             <!-- Testing dependencies -->
 
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>1.7.25</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/junit/junit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-core</artifactId>
+                <version>1.3</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-library -->
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-library</artifactId>
+                <version>1.3</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.jmock/jmock-junit4 -->
+            <dependency>
+                <groupId>org.jmock</groupId>
+                <artifactId>jmock-junit4</artifactId>
+                <version>2.12.0</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>5.5.0</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.easymock/easymock -->
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymock</artifactId>
+                <version>3.6</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>2.28.2</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.testing.sling-mock-oak -->
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.testing.sling-mock-oak</artifactId>
+                <version>2.1.6</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.testing.sling-mock.junit4 -->
+            <!-- replaces org.apache.sling.testing.sling-mock -->
+            <!-- This triggers https://issues.apache.org/jira/browse/SLING-8576 which needs a workaround. This workaround
+             should be removed from the POMs once this is updated. -->
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.testing.sling-mock.junit4</artifactId>
+                <version>2.3.14</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.testing.logging-mock -->
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.testing.logging-mock</artifactId>
+                <version>2.0.0</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.testing.hamcrest -->
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.testing.hamcrest</artifactId>
+                <version>1.0.2</version>
+                <scope>test</scope>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -141,26 +259,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.1.2</version>
-                </plugin>
-
-                <!-- https://mvnrepository.com/artifact/org.apache.felix/maven-scr-plugin -->
-                <plugin>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>maven-scr-plugin</artifactId>
-                    <version>1.26.2</version>
-                    <executions>
-                        <execution>
-                            <id>generate-scr-scrdescriptor</id>
-                            <goals>
-                                <goal>scr</goal>
-                            </goals>
-                            <configuration>
-                                <properties>
-                                    <service.vendor>IST GmbH Dresden</service.vendor>
-                                </properties>
-                            </configuration>
-                        </execution>
-                    </executions>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/nl.geodienstencentrum.maven/sass-maven-plugin -->
@@ -240,6 +338,7 @@
                     <groupId>org.apache.sling</groupId>
                     <artifactId>maven-sling-plugin</artifactId>
                     <version>2.3.8</version>
+                    <!-- Caution: versions above 2.4 seem not to work without further investigation. -->
                     <configuration>
                         <skip>true</skip>
                         <slingUrl>${sling.scheme}://${sling.host}:${sling.port}${sling.context}/system/console/install
@@ -332,6 +431,19 @@
 
             </plugins>
         </pluginManagement>
+
+        <extensions>
+            <extension>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-extension</artifactId>
+                <version>${com.spotify.dockerfile.version}</version>
+            </extension>
+            <extension>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${com.spotify.dockerfile.version}</version>
+            </extension>
+        </extensions>
     </build>
 
     <profiles>
