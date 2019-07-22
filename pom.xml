@@ -3,17 +3,10 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.composum.meta.ist</groupId>
-        <artifactId>parent-2-public</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <relativePath>ist/parent/2/public</relativePath>
-    </parent>
-
     <groupId>com.composum.meta</groupId>
     <artifactId>composum-meta-root</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1</version>
 
     <name>Composum Meta Root</name>
     <description>Maven parent for Composum Meta stuff</description>
@@ -25,19 +18,16 @@
         <!--module>archetypes</module-->
     </modules>
 
-    <properties>
-        <java.source>11</java.source>
-        <java.target>11</java.target>
-        <maven.compiler.source>${java.source}</maven.compiler.source>
-        <maven.compiler.target>${java.target}</maven.compiler.target>
-    </properties>
-
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
-        </license>
-    </licenses>
+    <distributionManagement>
+        <repository>
+            <id>archiva</id>
+            <url>https://build.ist-software.com/archiva/repository/snapshots/</url>
+        </repository>
+        <snapshotRepository>
+            <id>archiva</id>
+            <url>https://build.ist-software.com/archiva/repository/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <scm>
         <connection>scm:git:https://github.com/ist-dresden/composum-meta.git</connection>
