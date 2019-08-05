@@ -58,7 +58,7 @@
         <sling.starter.dependency.version>11-SNAPSHOT</sling.starter.dependency.version>
 
         <!-- Some software versions -->
-        <com.spotify.dockerfile.version>1.4.10</com.spotify.dockerfile.version>
+        <com.spotify.dockerfile.version>1.4.12</com.spotify.dockerfile.version>
 
         <!-- development properties placeholders -->
         <sling.scheme>http</sling.scheme>
