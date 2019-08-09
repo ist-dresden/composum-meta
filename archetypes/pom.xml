@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.composum.meta.ist</groupId>
         <artifactId>parent-2-public</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.2-SNAPSHOT</version>
         <relativePath>../ist/parent/2/public</relativePath>
     </parent>
 
@@ -19,6 +19,7 @@
     <modules>
         <module>bundle-archetype</module>
         <module>composum-platform-subproject-archetype</module>
+        <module>composum-pages-project-archetype</module>
     </modules>
 
 </project>
