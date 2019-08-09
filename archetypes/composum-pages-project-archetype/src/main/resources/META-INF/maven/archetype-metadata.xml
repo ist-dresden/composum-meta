@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="composum-prototype-pages-simple"
+    xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <fileSets>
+    <fileSet encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>composum-prototype-pages-simple.iml</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <modules>
+    <module id="${rootArtifactId}-app" dir="app" name="${rootArtifactId}-app">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>composum-prototype-pages-simple-app.iml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+      <modules>
+        <module id="${rootArtifactId}-app-bundle" dir="bundle" name="${rootArtifactId}-app-bundle">
+          <fileSets>
+            <fileSet encoding="UTF-8">
+              <directory></directory>
+              <includes>
+                <include>composum-prototype-pages-simple-app-bundle.iml</include>
+              </includes>
+            </fileSet>
+          </fileSets>
+        </module>
+        <module id="${rootArtifactId}-app-package" dir="package" name="${rootArtifactId}-app-package">
+          <fileSets>
+            <fileSet filtered="true" encoding="UTF-8">
+              <directory>src/main/content</directory>
+              <includes>
+                <include>**/*.xml</include>
+                <include>**/*.jsp</include>
+              </includes>
+            </fileSet>
+            <fileSet encoding="UTF-8">
+              <directory>src/main/content</directory>
+              <includes>
+                <include>**/*.scss</include>
+                <include>**/*.png</include>
+              </includes>
+            </fileSet>
+            <fileSet encoding="UTF-8">
+              <directory></directory>
+              <includes>
+                <include>composum-prototype-pages-simple-app-package.iml</include>
+              </includes>
+            </fileSet>
+          </fileSets>
+        </module>
+      </modules>
+    </module>
+    <module id="${rootArtifactId}-content" dir="content" name="${rootArtifactId}-content">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/content</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/content</directory>
+          <includes>
+            <include>**/*.jpg</include>
+            <include>**/*.svg</include>
+            <include>**/*.png</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>composum-prototype-pages-simple-content.iml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+  </modules>
+</archetype-descriptor>
