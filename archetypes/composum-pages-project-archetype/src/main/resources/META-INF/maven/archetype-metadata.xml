@@ -2,6 +2,31 @@
 <archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="composum-prototype-pages-simple"
     xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="tenant">
+      <validationRegex>[a-zA-Z0-9]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="cluster">
+      <validationRegex>[a-zA-Z0-9]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="project">
+      <validationRegex>[a-zA-Z0-9]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="package">
+      <defaultValue>${tenant}.${cluster}.${project}</defaultValue>
+      <validationRegex>[a-zA-Z0-9]+[.][a-zA-Z0-9]+[.][a-zA-Z0-9]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="groupId">
+      <defaultValue>${tenant}.${cluster}</defaultValue>
+      <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="artifactId">
+      <defaultValue>${tenant}.${cluster}.${project}</defaultValue>
+      <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="name"/>
+    <requiredProperty key="description"/>
+  </requiredProperties>
   <fileSets>
     <fileSet encoding="UTF-8">
       <directory></directory>
@@ -52,7 +77,7 @@
     </module>
     <module id="${rootArtifactId}-content" dir="content" name="${rootArtifactId}-content">
       <fileSets>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">≤
           <directory>src/main/content/jcr_root/content</directory>
           <includes>
             <include>**/.content.xml</include>
