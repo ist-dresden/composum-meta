@@ -11,6 +11,7 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>pom</packaging>
 
-    <name>Composum Prototype Pages 'Simple' App</name>
+    <name>${name} App</name>
+    <description>Parent package for application for ${rootArtifactId}. ${description}</description>
 
 </project>

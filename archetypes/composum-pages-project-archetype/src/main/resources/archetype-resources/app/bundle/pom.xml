@@ -11,7 +11,8 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>bundle</packaging>
 
-    <name>Composum Prototype Pages 'Simple' App Bundle</name>
+    <name>${name} App Bundle</name>
+    <description>App bundle for ${rootArtifactId}. ${description}</description>
 
     <properties>
         <bundle.name>com.composum.prototype.pages.simple</bundle.name>
@@ -29,12 +30,12 @@
                         <Bundle-Category>${bundle.category}</Bundle-Category>
                         <Bundle-SymbolicName>${bundle.name}</Bundle-SymbolicName>
                         <Include-Resource>{maven-resources}</Include-Resource>
-                        <Export-Package>com.composum.prototype.pages.simple.*</Export-Package>
+                        <Export-Package>${package}.*</Export-Package>
                         <Import-Package>org.apache.sling.api.resource.*;version="[2.8.0,3)",
                             org.apache.sling.api.*;version="[2.2.2,3)",
                             javax.annotation.*;version="[0,4)",
                             *</Import-Package>
-                        <Sling-Model-Packages>com.composum.prototype.pages.model.*</Sling-Model-Packages>
+                        <Sling-Model-Packages>${package}.*</Sling-Model-Packages>
                     </instructions>
                 </configuration>
             </plugin>
@@ -50,6 +51,12 @@
         </plugins>
     </build>
     <dependencies>
+
+        <!-- Composum Pages -->
+        <dependency>
+            <groupId>com.composum.sling.pages</groupId>
+            <artifactId>composum-sling-pages-commons-bundle</artifactId>
+        </dependency>
 
         <!-- Composum Core -->
         <dependency>
@@ -78,9 +85,6 @@
     </dependencies>
     <profiles>
 
-        <profile>
-            <id>installBundle</id>
-        </profile>
         <profile>
             <id>installPackage</id>
         </profile>

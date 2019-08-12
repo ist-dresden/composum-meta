@@ -11,7 +11,8 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>content-package</packaging>
 
-    <name>Composum Prototype Pages 'Simple' Content</name>
+    <name>${name} Content</name>
+    <description>Content package for ${rootArtifactId}. ${description}</description>
 
     <build>
         <resources>
@@ -46,7 +47,7 @@
 
                     <filters>
                         <filter>
-                            <root>/content/composum/prototype/pages/simple</root>
+                            <root>/content/${package.replaceAll("\.","/")}</root>
                         </filter>
                     </filters>
 

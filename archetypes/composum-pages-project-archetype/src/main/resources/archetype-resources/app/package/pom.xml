@@ -11,7 +11,8 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>content-package</packaging>
 
-    <name>Composum Prototype Pages 'Simple' App Package</name>
+    <name>${name} Content</name>
+    <description>App package for ${rootArtifactId}. ${description}</description>
 
     <build>
         <resources>
@@ -74,12 +75,12 @@
 
                     <filters>
                         <filter>
-                            <root>/apps/composum/prototype/pages/simple</root>
+                            <root>/apps/${package.replaceAll("\.","/")}</root>
                         </filter>
                         <filter>
-                            <root>/apps/${tenant}/${cluster}/install</root>
+                            <root>/apps/${package.replaceFirst("([^.]+)[.]([^.]+).*","$1/$2")}/install</root>
                             <includes>
-                                <include>.*/${tenant}-${cluster}-${project}-app-bundle.*\.jar</include>
+                                <include>.*/${rootArtifactId}-app-bundle.*\.jar</include>
                             </includes>
                         </filter>
                     </filters>
@@ -87,8 +88,8 @@
                     <embeddeds>
                         <embedded>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>composum-prototype-pages-simple-app-bundle</artifactId>
-                            <target>/apps/composum/prototype/install</target>
+                            <artifactId>${rootArtifactId}-app-bundle</artifactId>
+                            <target>/apps/${package.replaceFirst("([^.]+)[.]([^.]+).*","$1/$2")}/install</target>
                         </embedded>
                     </embeddeds>
 
@@ -99,11 +100,10 @@
     </build>
     <dependencies>
 
-        <!-- Composum Prototype -->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>${rootArtifactId}-app-bundle</artifactId>
-            <version>${version}</version>
+            <version>${project.version}</version>
         </dependency>
 
         <!-- Composum Pages -->
