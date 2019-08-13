@@ -1,3 +1,5 @@
+/** Renames all generated directories named tenant, domain or project to the values of the corresponding properties. */
+
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
@@ -20,7 +22,7 @@ void renameDirectories(Path path, Map<String, String> dirnamemap) {
             if (dirnamemap.containsKey(childName)) {
                 String newname = dirnamemap.get(childName)
                 Path renamed = Files.move(child, path.resolve(newname))
-                println("Renaming " + child.toString() + " to " + renamed.toString())
+                // println("Renaming " + child.toString() + " to " + renamed.toString())
                 renameDirectories(renamed, dirnamemap)
             } else {
                 renameDirectories(child, dirnamemap)
