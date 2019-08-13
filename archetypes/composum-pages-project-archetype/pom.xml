@@ -7,7 +7,7 @@
         <groupId>com.composum.meta.ist</groupId>
         <artifactId>parent-2</artifactId>
         <version>1.2-SNAPSHOT</version>
-        <relativePath>../../ist/parent/2/public</relativePath>
+        <relativePath></relativePath>
     </parent>
 
     <groupId>com.composum.meta.ist.archetype</groupId>
