@@ -6,22 +6,21 @@
     <requiredProperty key="tenant">
       <validationRegex>[a-zA-Z0-9]+</validationRegex>
     </requiredProperty>
-    <requiredProperty key="cluster">
+    <requiredProperty key="domain">
       <validationRegex>[a-zA-Z0-9]+</validationRegex>
     </requiredProperty>
     <requiredProperty key="project">
       <validationRegex>[a-zA-Z0-9]+</validationRegex>
     </requiredProperty>
     <requiredProperty key="package">
-      <defaultValue>${tenant}.${cluster}.${project}</defaultValue>
-      <validationRegex>[a-zA-Z0-9]+[.][a-zA-Z0-9]+[.][a-zA-Z0-9]+</validationRegex>
+      <defaultValue>com.${tenant}.${domain}.${project}</defaultValue>
     </requiredProperty>
     <requiredProperty key="groupId">
-      <defaultValue>${tenant}.${cluster}</defaultValue>
+      <defaultValue>${tenant}.${domain}</defaultValue>
       <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
     </requiredProperty>
     <requiredProperty key="artifactId">
-      <defaultValue>${tenant}.${cluster}.${project}</defaultValue>
+      <defaultValue>${tenant}-${domain}-${project}</defaultValue>
       <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
     </requiredProperty>
     <requiredProperty key="name"/>
@@ -56,7 +55,7 @@
         </module>
         <module id="${rootArtifactId}-app-package" dir="package" name="${rootArtifactId}-app-package">
           <fileSets>
-            <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <fileSet filtered="true" encoding="UTF-8">
               <directory>src/main/content/jcr_root/apps</directory>
               <includes>
                 <include>**/.content.xml</include>
@@ -77,7 +76,7 @@
     </module>
     <module id="${rootArtifactId}-content" dir="content" name="${rootArtifactId}-content">
       <fileSets>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">≤
+        <fileSet filtered="true" encoding="UTF-8">≤
           <directory>src/main/content/jcr_root/content</directory>
           <includes>
             <include>**/.content.xml</include>

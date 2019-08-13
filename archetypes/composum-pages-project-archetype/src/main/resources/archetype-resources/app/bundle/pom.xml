@@ -15,7 +15,7 @@
     <description>App bundle for ${rootArtifactId}. ${description}</description>
 
     <properties>
-        <bundle.name>com.composum.prototype.pages.simple</bundle.name>
+        <bundle.name>${tenant}.${domain}.${project}.bundle</bundle.name>
     </properties>
 
     <build>
