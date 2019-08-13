@@ -75,10 +75,10 @@
 
                     <filters>
                         <filter>
-                            <root>/apps/${package.replaceAll("\.","/")}</root>
+                            <root>/apps/${tenant}/${domain}/${project}</root>
                         </filter>
                         <filter>
-                            <root>/apps/${package.replaceFirst("([^.]+)[.]([^.]+).*","$1/$2")}/install</root>
+                            <root>/apps/${tenant}/${domain}/install</root>
                             <includes>
                                 <include>.*/${rootArtifactId}-app-bundle.*\.jar</include>
                             </includes>
@@ -89,7 +89,7 @@
                         <embedded>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>${rootArtifactId}-app-bundle</artifactId>
-                            <target>/apps/${package.replaceFirst("([^.]+)[.]([^.]+).*","$1/$2")}/install</target>
+                            <target>/apps/${tenant}/${domain}/install</target>
                         </embedded>
                     </embeddeds>
 
