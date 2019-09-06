@@ -22,7 +22,7 @@
             <dependency>
                 <groupId>com.composum.meta.sling.dependencies</groupId>
                 <artifactId>sling-starter-dependencies-11</artifactId>
-                <version>1.1</version>
+                <version>1.2-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -161,6 +161,13 @@
                 <artifactId>org.apache.sling.testing.sling-mock-oak</artifactId>
                 <version>2.1.6</version>
                 <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <!-- Not present anymore in Sling Starter 12, so we don't want to have that in the classpath of other modules. -->
+                        <groupId>commons-lang</groupId>
+                        <artifactId>commons-lang</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.testing.sling-mock.junit4 -->
@@ -172,6 +179,13 @@
                 <artifactId>org.apache.sling.testing.sling-mock.junit4</artifactId>
                 <version>2.3.14</version>
                 <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <!-- Not present anymore in Sling Starter 12, so we don't want to have that in the classpath of other modules. -->
+                        <groupId>commons-lang</groupId>
+                        <artifactId>commons-lang</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.testing.logging-mock -->
@@ -194,6 +208,43 @@
     </dependencyManagement>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>misc-validations</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <rules>
+                                <banDuplicatePomDependencyVersions/>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <!-- Commons-lang is not present in Sling Launcher 12 anymore, so we shouldn't use it. -->
+                        <id>exclude-commons-lang</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <rules>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>commons-lang:commons-lang</exclude>
+                                    </excludes>
+                                </bannedDependencies>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
         <pluginManagement>
             <plugins>
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
@@ -429,6 +480,11 @@
                     <version>${com.spotify.dockerfile.version}</version>
                 </plugin>
 
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>1.4.1</version>
+                </plugin>
             </plugins>
         </pluginManagement>
 
