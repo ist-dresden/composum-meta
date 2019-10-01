@@ -80,6 +80,10 @@
             <id>archiva</id>
             <url>https://build.ist-software.com/archiva/repository/snapshots/</url>
         </snapshotRepository>
+        <site>
+            <id>api.composum.com</id>
+            <url>scp://api.composum.com/var/www/composum/api/public/</url>
+        </site>
     </distributionManagement>
 
     <scm>
