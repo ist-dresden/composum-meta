@@ -1249,6 +1249,9 @@
                 <scope>provided</scope>
             </dependency>
 
+            <!-- Caution: when changing this version number, also adapt properties
+            com.drewnoakes.metadata-extractor.version and com.adobe.xmp.xmpcore.version according to the version numbers in
+            this version in https://mvnrepository.com/artifact/org.apache.tika/tika-parsers -->
             <dependency>
                 <groupId>org.apache.tika</groupId>
                 <artifactId>tika-parsers</artifactId>
