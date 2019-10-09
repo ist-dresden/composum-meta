@@ -31,4 +31,9 @@ void renameDirectories(Path path, Map<String, String> dirnamemap) {
     }
 }
 
-renameDirectories(projectPath, dirnamemap)
+try {
+    renameDirectories(projectPath, dirnamemap)
+} catch (Throwable t) {
+    t.printStackTrace()
+    throw t
+}
