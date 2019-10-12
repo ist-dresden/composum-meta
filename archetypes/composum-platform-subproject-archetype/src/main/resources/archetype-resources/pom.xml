@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.composum.sling.platform</groupId>
-        <artifactId>composum-sling-platform</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <groupId>com.composum.platform</groupId>
+        <artifactId>composum-platform</artifactId>
+        <version>1.0.4</version>
     </parent>
 
     <groupId>${groupId}</groupId>
@@ -19,7 +19,7 @@
     <properties>
         <composum.nodes.version>1.11.1-SNAPSHOT</composum.nodes.version>
         <composum.pages.version>1.0.0-SNAPSHOT</composum.pages.version>
-        <composum.platform.version>1.0.0-SNAPSHOT</composum.platform.version>
+        <composum.platform.version>1.0.4</composum.platform.version>
     </properties>
 
     <dependencyManagement>
@@ -35,22 +35,22 @@
 
             <!-- Composum Pages -->
             <dependency>
-                <groupId>com.composum.sling.pages</groupId>
-                <artifactId>composum-sling-pages-commons-bundle</artifactId>
+                <groupId>com.composum.pages</groupId>
+                <artifactId>composum-pages-commons-bundle</artifactId>
                 <version>${composum.pages.version}</version>
                 <scope>provided</scope>
             </dependency>
 
             <!-- Composum Platform -->
             <dependency>
-                <groupId>com.composum.sling.platform</groupId>
-                <artifactId>composum-sling-platform-models-bundle</artifactId>
+                <groupId>com.composum.platform</groupId>
+                <artifactId>composum-platform-models-bundle</artifactId>
                 <version>${composum.platform.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>com.composum.sling.platform</groupId>
-                <artifactId>composum-sling-platform-commons-bundle</artifactId>
+                <groupId>com.composum.platform</groupId>
+                <artifactId>composum-platform-commons-bundle</artifactId>
                 <version>${composum.platform.version}</version>
                 <scope>provided</scope>
             </dependency>

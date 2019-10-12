@@ -6,7 +6,7 @@
 
     <groupId>com.composum.meta.ist</groupId>
     <artifactId>parent-root</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <packaging>pom</packaging>
 
     <name>IST parent root</name>
@@ -22,14 +22,20 @@
 
     <developers>
         <developer>
+            <name>Hans-Peter Störr</name>
+            <email>hp.stoerr@ist-software.com</email>
+            <organization>IST GmbH Dresden</organization>
+            <organizationUrl>http://www.ist-software.com</organizationUrl>
+        </developer>
+        <developer>
             <name>Ralf Wunsch</name>
             <email>r.wunsch@ist-software.com</email>
             <organization>IST GmbH Dresden</organization>
             <organizationUrl>http://www.ist-software.com</organizationUrl>
         </developer>
         <developer>
-            <name>Hans-Peter Störr</name>
-            <email>hp.stoerr@ist-software.com</email>
+            <name>Mirko Zeibig</name>
+            <email>m.zeibig@ist-software.com</email>
             <organization>IST GmbH Dresden</organization>
             <organizationUrl>http://www.ist-software.com</organizationUrl>
         </developer>
@@ -52,7 +58,17 @@
         <sling.starter.dependency.version>11-SNAPSHOT</sling.starter.dependency.version>
 
         <!-- Some software versions -->
-        <com.spotify.dockerfile.version>1.4.10</com.spotify.dockerfile.version>
+        <com.spotify.dockerfile.version>1.4.12</com.spotify.dockerfile.version>
+
+        <!-- development properties placeholders -->
+        <sling.scheme>http</sling.scheme>
+        <sling.secure>false</sling.secure>
+        <sling.host></sling.host>
+        <sling.port></sling.port>
+        <sling.context></sling.context>
+        <sling.user></sling.user>
+        <sling.password></sling.password>
+        <bundle.status.skip>true</bundle.status.skip>
     </properties>
 
     <distributionManagement>
@@ -64,6 +80,10 @@
             <id>archiva</id>
             <url>https://build.ist-software.com/archiva/repository/snapshots/</url>
         </snapshotRepository>
+        <site>
+            <id>api.composum.com</id>
+            <url>scp://api.composum.com/var/www/composum/api/public/</url>
+        </site>
     </distributionManagement>
 
     <scm>
@@ -93,6 +113,23 @@
                             <serverId>ossrh</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <failOnError>false</failOnError>
                         </configuration>
                     </plugin>
 

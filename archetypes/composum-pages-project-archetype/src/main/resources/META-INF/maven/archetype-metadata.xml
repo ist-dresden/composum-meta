@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="composum-prototype-pages-simple"
+    xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="tenant">
+      <validationRegex>[a-zA-Z0-9]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="domain">
+      <validationRegex>[a-zA-Z0-9]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="project">
+      <validationRegex>[a-zA-Z0-9]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="package">
+      <defaultValue>com.${tenant}.${domain}.${project}</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="groupId">
+      <defaultValue>${tenant}.${domain}</defaultValue>
+      <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="artifactId">
+      <defaultValue>${tenant}-${domain}-${project}</defaultValue>
+      <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="name"/>
+    <requiredProperty key="description"/>
+  </requiredProperties>
+  <fileSets>
+    <fileSet encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>README.md</include>
+        <include>.gitignore</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <modules>
+    <module id="${rootArtifactId}-app" dir="app" name="${rootArtifactId}-app">
+      <fileSets>
+      </fileSets>
+      <modules>
+        <module id="${rootArtifactId}-app-bundle" dir="bundle" name="${rootArtifactId}-app-bundle">
+          <fileSets>
+            <fileSet filtered="true" packaged="true" encoding="UTF-8">
+              <directory>src/main/java</directory>
+              <excludes>
+                <exclude>ignored.txt</exclude>
+              </excludes>
+            </fileSet>
+            <fileSet filtered="true" packaged="true" encoding="UTF-8">
+              <directory>src/test/java</directory>
+            </fileSet>
+          </fileSets>
+        </module>
+        <module id="${rootArtifactId}-app-package" dir="package" name="${rootArtifactId}-app-package">
+          <fileSets>
+            <fileSet filtered="true" encoding="UTF-8">
+              <directory>src/main/content/jcr_root/apps</directory>
+              <includes>
+                <include>**/.content.xml</include>
+                <include>**/*.xml</include>
+                <include>**/*.jsp</include>
+              </includes>
+            </fileSet>
+            <fileSet encoding="UTF-8">
+              <directory>src/main/content</directory>
+              <includes>
+                <include>**/*.scss</include>
+                <include>**/*.png</include>
+              </includes>
+            </fileSet>
+          </fileSets>
+        </module>
+      </modules>
+    </module>
+    <module id="${rootArtifactId}-content" dir="content" name="${rootArtifactId}-content">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">≤
+          <directory>src/main/content/jcr_root/content</directory>
+          <includes>
+            <include>**/.content.xml</include>
+            <include>**/*.xml</include>
+            <include>**/*.jsp</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/content</directory>
+          <includes>
+            <include>**/*.jpg</include>
+            <include>**/*.svg</include>
+            <include>**/*.png</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+  </modules>
+</archetype-descriptor>

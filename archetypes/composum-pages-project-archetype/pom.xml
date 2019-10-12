@@ -7,15 +7,15 @@
         <groupId>com.composum.meta.ist</groupId>
         <artifactId>parent-2</artifactId>
         <version>1.2-SNAPSHOT</version>
-        <relativePath>../../ist/parent/2/public</relativePath>
+        <relativePath>../../ist/parent/2/pom.xml</relativePath>
     </parent>
 
     <groupId>com.composum.meta.ist.archetype</groupId>
-    <artifactId>composum-bundle-archetype</artifactId>
+    <artifactId>composum-pages-project-archetype</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
-    <name>Composum Archetype for Bundles</name>
+    <name>Composum Archetype for Pages projects</name>
 
     <build>
         <extensions>
