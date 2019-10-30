@@ -27,7 +27,7 @@
     <requiredProperty key="description"/>
   </requiredProperties>
   <fileSets>
-    <fileSet encoding="UTF-8">
+    <fileSet encoding="UTF-8" filtered="true">
       <directory></directory>
       <includes>
         <include>README.md</include>
