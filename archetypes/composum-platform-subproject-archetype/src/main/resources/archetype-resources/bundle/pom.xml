@@ -11,8 +11,8 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>bundle</packaging>
 
-    <name>${name} Bundle</name>
-    <description>${description} Bundle</description>
+    <name>${projectname} Bundle</name>
+    <description>${projectdescription} Bundle</description>
 
     <properties>
         <bundle.name>${package}</bundle.name>

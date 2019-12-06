@@ -1,0 +1,5 @@
+/**
+ * ${projectname}
+ * ${projectdescription}
+ */
+package ${package};
