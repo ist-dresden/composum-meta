@@ -11,7 +11,7 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>pom</packaging>
 
-    <name>${name} App</name>
-    <description>Parent package for application for ${rootArtifactId}. ${description}</description>
+    <name>${projectname} App</name>
+    <description>Parent package for application for ${rootArtifactId}. ${projectdescription}</description>
 
 </project>

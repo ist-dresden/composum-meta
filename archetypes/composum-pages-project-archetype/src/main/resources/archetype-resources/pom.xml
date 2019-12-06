@@ -7,7 +7,7 @@
         <groupId>com.composum.meta.ist</groupId>
         <artifactId>parent-2</artifactId>
         <version>1.1</version>
-        <relativePath></relativePath>
+        <relativePath/>
     </parent>
 
     <groupId>${groupId}</groupId>
@@ -15,8 +15,8 @@
     <version>${version}</version>
     <packaging>pom</packaging>
 
-    <name>${name}</name>
-    <description>${description}</description>
+    <name>${projectname}</name>
+    <description>${projectdescription}</description>
 
     <dependencyManagement>
         <dependencies>

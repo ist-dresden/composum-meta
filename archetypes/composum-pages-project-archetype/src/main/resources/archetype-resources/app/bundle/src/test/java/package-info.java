@@ -1,4 +1,4 @@
 /**
- * Tests for ${name}.
+ * Tests for ${projectname}.
  */
 package ${package};
