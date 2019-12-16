@@ -9,7 +9,7 @@ set -e -x -v
 groupId="com.composum.platform"
 artifactId="cpm-platform-replication"
 version="1.0.0-SNAPSHOT"
-package="com.composum.replication"
+package="com.composum.platform.replication"
 projectname="Composum Platform Replication"
 projectdescription="Composum Platform subproject for replicating content remotely to publish hosts"
 
