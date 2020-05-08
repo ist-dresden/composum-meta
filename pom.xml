@@ -15,7 +15,7 @@
     <modules>
         <module>sling/starter/dependencies</module>
         <module>ist/parent</module>
-        <module>archetypes</module>
+        <!-- <module>archetypes</module> FIXME reintroduce again after archiva -> nexus migration -->
     </modules>
 
     <distributionManagement>
