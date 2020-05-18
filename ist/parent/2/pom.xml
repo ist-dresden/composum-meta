@@ -320,6 +320,13 @@
                     </configuration>
                 </plugin>
 
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-dependency-plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>3.1.2</version>
+                </plugin>
+
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -400,6 +407,7 @@
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.sling/maven-sling-plugin -->
+                <!-- FIXME(hps,18.05.20) this is superceded with sling-maven-plugin - check this. -->
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>maven-sling-plugin</artifactId>
@@ -422,6 +430,20 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+
+                <!-- https://mvnrepository.com/artifact/org.apache.sling/sling-maven-plugin -->
+                <plugin>
+                    <groupId>org.apache.sling</groupId>
+                    <artifactId>sling-maven-plugin</artifactId>
+                    <version>2.4.2</version>
+                    <configuration>
+                        <slingUrl>${sling.scheme}://${sling.host}:${sling.port}${sling.context}/system/console/install
+                        </slingUrl>
+                        <user>${sling.user}</user>
+                        <password>${sling.password}</password>
+                        <failOnError>true</failOnError>
+                    </configuration>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.sling/slingstart-maven-plugin -->
@@ -460,10 +482,11 @@
                     </executions>
                 </plugin>
 
+                <!-- https://mvnrepository.com/artifact/com.day.jcr.vault/content-package-maven-plugin -->
                 <plugin>
                     <groupId>com.day.jcr.vault</groupId>
                     <artifactId>content-package-maven-plugin</artifactId>
-                    <version>0.0.24</version>
+                    <version>0.0.24</version> <!-- FIXME update to 1.0.2 ? -->
                     <extensions>true</extensions>
                     <configuration>
                         <failOnError>true</failOnError>
@@ -476,9 +499,10 @@
                     </configuration>
                 </plugin>
 
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.12.4</version>
+                    <version>2.22.2</version>
                     <configuration>
                         <systemProperties>
                             <org.slf4j.simpleLogger.log.com.composum>DEBUG</org.slf4j.simpleLogger.log.com.composum>
@@ -509,11 +533,41 @@
                     <version>3.8.2</version>
                 </plugin>
 
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-project-info-reports-plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
+
+                <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>1.6.0</version>
+                </plugin>
+
+                <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/build-helper-maven-plugin -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+
+                <!-- https://mvnrepository.com/artifact/org.sonatype.plugins/nexus-staging-maven-plugin -->
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.8</version>
+                </plugin>
+
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-gpg-plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
+                </plugin>
+
             </plugins>
         </pluginManagement>
 
