@@ -450,7 +450,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>slingstart-maven-plugin</artifactId>
-                    <version>1.9.2</version>
+                    <version>1.9.12</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/com.citytechinc.maven.plugins/osgi-bundle-status-maven-plugin -->
