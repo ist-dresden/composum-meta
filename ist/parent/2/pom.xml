@@ -390,6 +390,35 @@
                     </executions>
                 </plugin>
 
+                <!-- https://mvnrepository.com/artifact/pl.project13.maven/git-commit-id-plugin -->
+                <plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <version>4.0.0</version>
+                    <executions>
+                        <execution>
+                            <id>get-the-git-infos</id>
+                            <goals>
+                                <goal>revision</goal>
+                            </goals>
+                            <phase>initialize</phase>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <offline>true</offline>
+                        <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                        <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties
+                        </generateGitPropertiesFilename>
+                        <includeOnlyProperties>
+                            <includeOnlyProperty>^git.branch$</includeOnlyProperty>
+                            <includeOnlyProperty>^git.build.(time|version)$</includeOnlyProperty>
+                            <includeOnlyProperty>^git.commit.id.(abbrev|full|describe|time)$</includeOnlyProperty>
+                            <includeOnlyProperty>^git.dirty$</includeOnlyProperty>
+                        </includeOnlyProperties>
+                        <commitIdGenerationMode>full</commitIdGenerationMode>
+                    </configuration>
+                </plugin>
+
                 <!-- https://mvnrepository.com/artifact/org.apache.felix/maven-bundle-plugin -->
                 <plugin>
                     <groupId>org.apache.felix</groupId>
@@ -402,6 +431,9 @@
                             <Bundle-Category>composum</Bundle-Category>
                             <Bundle-Vendor>IST GmbH Dresden</Bundle-Vendor>
                             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                            <Build-Date>${build.timestamp}</Build-Date>
+                            <SCM-Revision>${git.commit.id.describe}</SCM-Revision>
+                            <SCM-Branch>${git.branch}</SCM-Branch>
                         </instructions>
                     </configuration>
                 </plugin>
@@ -483,6 +515,7 @@
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/com.day.jcr.vault/content-package-maven-plugin -->
+                <!-- Deprecated: rather use filevault-package-maven-plugin. -->
                 <plugin>
                     <groupId>com.day.jcr.vault</groupId>
                     <artifactId>content-package-maven-plugin</artifactId>
@@ -495,6 +528,17 @@
                         <userId>${sling.user}</userId>
                         <password>${sling.password}</password>
                         <useProxy>false</useProxy>
+                        <failOnMissingEmbed>true</failOnMissingEmbed>
+                    </configuration>
+                </plugin>
+
+                <!-- https://mvnrepository.com/artifact/org.apache.jackrabbit/filevault-package-maven-plugin -->
+                <plugin>
+                    <groupId>org.apache.jackrabbit</groupId>
+                    <artifactId>filevault-package-maven-plugin</artifactId>
+                    <version>1.1.2</version>
+                    <extensions>true</extensions>
+                    <configuration>
                         <failOnMissingEmbed>true</failOnMissingEmbed>
                     </configuration>
                 </plugin>
@@ -566,6 +610,35 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>1.6</version>
+                </plugin>
+
+                <!-- https://mvnrepository.com/artifact/pl.project13.maven/git-commit-id-plugin -->
+                <plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <version>4.0.0</version>
+                    <executions>
+                        <execution>
+                            <id>get-the-git-infos</id>
+                            <goals>
+                                <goal>revision</goal>
+                            </goals>
+                            <phase>initialize</phase>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <offline>true</offline>
+                        <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                        <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties
+                        </generateGitPropertiesFilename>
+                        <includeOnlyProperties>
+                            <includeOnlyProperty>^git.branch$</includeOnlyProperty>
+                            <includeOnlyProperty>^git.build.(time|version)$</includeOnlyProperty>
+                            <includeOnlyProperty>^git.commit.id.(abbrev|full|describe|time)$</includeOnlyProperty>
+                            <includeOnlyProperty>^git.dirty$</includeOnlyProperty>
+                        </includeOnlyProperties>
+                        <commitIdGenerationMode>full</commitIdGenerationMode>
+                    </configuration>
                 </plugin>
 
             </plugins>

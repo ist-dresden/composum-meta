@@ -9,7 +9,7 @@ The directory `ist/parent` contains the parent `pom` for the various projects of
 
 There is a couple of maven archetypes that can speed up the process of setting up a new project. Specifically:
 
-- composum-project-archetype to create a new project using Composum Pages, Platform and Nodes,
+- composum-pages-project-archetype to create a new project using Composum Pages, Platform and Nodes,
 - composum-bundle-archetype to create an OSGI bundle,
 - composum-platform-subproject-archetype for subprojects of Composum Platform
 
