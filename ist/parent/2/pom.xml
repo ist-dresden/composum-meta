@@ -409,6 +409,7 @@
                         <generateGitPropertiesFile>true</generateGitPropertiesFile>
                         <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties
                         </generateGitPropertiesFilename>
+                        <failOnNoGitDirectory>false</failOnNoGitDirectory>
                         <includeOnlyProperties>
                             <includeOnlyProperty>^git.branch$</includeOnlyProperty>
                             <includeOnlyProperty>^git.build.(time|version)$</includeOnlyProperty>
@@ -610,35 +611,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>1.6</version>
-                </plugin>
-
-                <!-- https://mvnrepository.com/artifact/pl.project13.maven/git-commit-id-plugin -->
-                <plugin>
-                    <groupId>pl.project13.maven</groupId>
-                    <artifactId>git-commit-id-plugin</artifactId>
-                    <version>4.0.0</version>
-                    <executions>
-                        <execution>
-                            <id>get-the-git-infos</id>
-                            <goals>
-                                <goal>revision</goal>
-                            </goals>
-                            <phase>initialize</phase>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <offline>true</offline>
-                        <generateGitPropertiesFile>true</generateGitPropertiesFile>
-                        <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties
-                        </generateGitPropertiesFilename>
-                        <includeOnlyProperties>
-                            <includeOnlyProperty>^git.branch$</includeOnlyProperty>
-                            <includeOnlyProperty>^git.build.(time|version)$</includeOnlyProperty>
-                            <includeOnlyProperty>^git.commit.id.(abbrev|full|describe|time)$</includeOnlyProperty>
-                            <includeOnlyProperty>^git.dirty$</includeOnlyProperty>
-                        </includeOnlyProperties>
-                        <commitIdGenerationMode>full</commitIdGenerationMode>
-                    </configuration>
                 </plugin>
 
             </plugins>
