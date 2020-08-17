@@ -5,7 +5,7 @@ This contains parent-POMs and other metainformation about Composum projects.
 
 The directory `ist/parent` contains the parent `pom` for the various projects of [IST GmbH Dresden](https://www.ist-software.com/), many of which are part of or related to the [Composum](http://composum.com) platform.
 
-### Maven artefacts for Pages etc.
+## Maven artefacts for Pages etc.
 
 There is a couple of maven archetypes that can speed up the process of setting up a new project. Specifically:
 
@@ -17,6 +17,15 @@ To create a project using the archetype you can do for instance:
 
     mvn archetype:generate -DarchetypeGroupId=com.composum.meta.ist.archetype -DarchetypeArtifactId=composum-platform-subproject-archetype
  
+Caution: there are some properties that have defaults; if you want to change them you have to press 'N'. Compare https://issues.apache.org/jira/browse/ARCHETYPE-308
+ 
+### Archetype maintenance
+
+For updating the archetypes present in the local repository: `mvn archetype:crawl` ; possibly use `mvn archetype:update-local-catalog` .
+
+When debugging the generation process use the additional parameter -DarchetypeCatalog=local to only use the archetypes in the local maven repository.
+
+Caution: the input of required properties seems to be done in alphabetical order, so if defaults reference other properties these should be named accordingly.
 
 ## Sling Starter Dependencies
 

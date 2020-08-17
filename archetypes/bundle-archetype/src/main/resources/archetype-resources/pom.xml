@@ -8,14 +8,13 @@
         <version>${parentVersion}</version>
     </parent>
 
-
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <packaging>bundle</packaging>
     <version>${version}</version>
 
-    <name>${name}</name>
-    <description>${description}</description>
+    <name>${projectName}</name>
+    <description>${projectDescription}</description>
 
     <properties>
         <bundle.name>${package}</bundle.name>
@@ -44,13 +43,17 @@
                         <Bundle-SymbolicName>${bundle.name}</Bundle-SymbolicName>
                         <Include-Resource>{maven-resources}</Include-Resource>
                         <Export-Package>${package}.*</Export-Package>
-                        <Import-Package>org.apache.sling.api.adapter.*;version="[2.2.0,3)",
+                        <Import-Package>
+                            com.composum.sling.core.*;version="[1.11,2.1)",
+                            com.composum.sling.nodes.*;version="[1.11,2.1)",
+                            com.composum.sling.cpnl.*;version="[1.11,2.1)",
                             org.apache.sling.api.request.*;version="[2.4.1,3)",
                             org.apache.sling.api.resource.*;version="[2.8.0,3)",
                             org.apache.sling.api.servlets.*;version="[2.1.1,3)",
                             org.apache.sling.api.*;version="[2.2.2,3)",
                             javax.annotation.*;version="[0,4)",
-                            *</Import-Package>
+                            *
+                        </Import-Package>
                         <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
                     </instructions>
                 </configuration>

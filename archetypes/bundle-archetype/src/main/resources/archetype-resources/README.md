@@ -1,3 +1,3 @@
-# ${name}
+# ${projectName}
 
-${description}
+${projectDescription}
