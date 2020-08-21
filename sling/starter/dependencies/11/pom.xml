@@ -109,6 +109,13 @@
                 <scope>provided</scope>
             </dependency>
 
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>mail</artifactId>
+                <version>1.5.0-b01</version>
+                <scope>provided</scope>
+            </dependency>
+
             <!-- Additional stuff integrated in other bundles - see http://localhost:9090/system/console/status-Bundles (not quite complete since that is difficult to do automatically) -->
 
             <dependency>
