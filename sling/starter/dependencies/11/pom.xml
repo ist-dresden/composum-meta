@@ -1248,7 +1248,7 @@
                 <version>2.0.12</version>
                 <scope>provided</scope>
                 <!-- CAUTION: This is an evil JAR with several old versions of libraries as embedded dependencies that aren't exported
-                    and can conflict with your code. Use scope optional so that  at least doesn't conflict with artifacts
+                    and can conflict with your code. Use "optional" so that at least doesn't conflict with artifacts
                     using a bundle that uses the sling.xss bundle. https://issues.apache.org/jira/browse/SLING-8404
                     -->
                 <optional>true</optional>
