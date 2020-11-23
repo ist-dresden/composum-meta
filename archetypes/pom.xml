@@ -6,13 +6,12 @@
         <groupId>com.composum.meta.ist</groupId>
         <artifactId>parent-2-public</artifactId>
         <version>1.3</version>
-        <relativePath>../ist/parent/2/public</relativePath>
     </parent>
 
     <groupId>com.composum.meta.ist.archetype</groupId>
     <artifactId>composum-archetype-reactor</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <name>Composum Incubator Archetype Reactor</name>
 
