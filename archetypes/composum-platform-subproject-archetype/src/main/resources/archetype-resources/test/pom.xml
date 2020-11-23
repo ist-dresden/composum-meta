@@ -15,7 +15,7 @@
     <artifactId>${artifactId}-test-package</artifactId>
     <packaging>content-package</packaging>
 
-    <name>${name} Test Package</name>
+    <name>${projectname} Test Package</name>
 
     <build>
         <resources>

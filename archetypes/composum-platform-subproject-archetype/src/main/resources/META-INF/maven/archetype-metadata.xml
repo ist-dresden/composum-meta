@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="composum-platform-workflow"
-    xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<archetype-descriptor
+        xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+        name="composum-platform-workflow"
+        xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="projectname"/>
+    <requiredProperty key="projectdescription"/>
+    <requiredProperty key="package">
+      <defaultValue>com.composum.${projectname}</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="groupId">
+      <defaultValue>com.composum.platform</defaultValue>
+      <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="artifactId">
+      <defaultValue>cpm-platform-${projectname}</defaultValue>
+      <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
+    </requiredProperty>
+  </requiredProperties>
   <fileSets>
     <fileSet filtered="true" encoding="UTF-8">
       <directory>test</directory>
     </fileSet>
-    <fileSet encoding="UTF-8">
+    <fileSet encoding="UTF-8" filtered="true">
       <directory></directory>
       <includes>
         <include>README.md</include>

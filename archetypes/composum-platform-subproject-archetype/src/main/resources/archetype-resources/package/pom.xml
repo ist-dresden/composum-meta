@@ -11,7 +11,7 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>content-package</packaging>
 
-    <name>${name} Package</name>
+    <name>${projectname} Package</name>
 
     <build>
         <resources>
@@ -78,7 +78,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>${project.groupId}</groupId>
-                                    <artifactId>${artifactId}-setup</artifactId>
+                                    <artifactId>${rootArtifactId}-setup</artifactId>
                                     <outputDirectory>${project.build.directory}/vault-work/META-INF/vault/hooks</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
@@ -117,7 +117,7 @@
                     <embeddeds>
                         <embedded>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>${artifactId}-bundle</artifactId>
+                            <artifactId>${rootArtifactId}-bundle</artifactId>
                             <target>/libs/composum/platform/install</target>
                         </embedded>
                     </embeddeds>
@@ -128,6 +128,18 @@
         </plugins>
     </build>
     <dependencies>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${rootArtifactId}-bundle</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${rootArtifactId}-setup</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <!-- Composum Pages -->
         <dependency>

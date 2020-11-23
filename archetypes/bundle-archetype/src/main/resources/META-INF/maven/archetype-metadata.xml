@@ -2,6 +2,37 @@
 <archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="composum-sling-platform-commons-bundle"
     xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="projectName">
+      <defaultValue>${artifactId}</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="projectDescription"/>
+    <requiredProperty key="parentArtefactId">
+      <defaultValue>composum-platform</defaultValue>
+      <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="parentGroupId">
+      <defaultValue>com.composum.platform</defaultValue>
+      <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="parentVersion">
+      <defaultValue>1.1.1-SNAPSHOT</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="groupId">
+      <defaultValue>com.composum.platform</defaultValue>
+      <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="artifactId">
+      <defaultValue>cpm-platform-${projectName}</defaultValue>
+      <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="version">
+      <defaultValue>0.0.1-SNAPSHOT</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="package">
+      <defaultValue>com.composum.${projectName}</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
   <fileSets>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/main/java</directory>

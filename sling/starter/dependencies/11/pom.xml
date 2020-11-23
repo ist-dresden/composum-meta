@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.composum.meta.sling.dependencies</groupId>
         <artifactId>sling-starter-dependencies-parent</artifactId>
-        <version>1.2</version>
+        <version>1.3</version>
     </parent>
 
     <artifactId>sling-starter-dependencies-11</artifactId>
@@ -15,7 +15,7 @@
 
     <name>Parent POM to use Sling Starter 11</name>
     <description>This specifies the versions of the OSGI bundles included in the Sling Starter as maven dependencies.
-        This POM can be included in the dependencyManagement section of an artefact with scope include to easily have
+        This POM can be included in the dependencyManagement section of an artifact with scope include to easily have
         the right versions for these bundles according to the Sling Starter.
         Caution: this was created automatically via a script, so it might not contain everything and there might be
         errors.
@@ -109,6 +109,13 @@
                 <scope>provided</scope>
             </dependency>
 
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>mail</artifactId>
+                <version>1.5.0-b01</version>
+                <scope>provided</scope>
+            </dependency>
+
             <!-- Additional stuff integrated in other bundles - see http://localhost:9090/system/console/status-Bundles (not quite complete since that is difficult to do automatically) -->
 
             <dependency>
@@ -143,7 +150,7 @@
             <dependency>
                 <groupId>taglibs</groupId>
                 <artifactId>standard</artifactId>
-                <version>1.2</version>
+                <version>1.1.2</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -1240,6 +1247,11 @@
                 <artifactId>org.apache.sling.xss</artifactId>
                 <version>2.0.12</version>
                 <scope>provided</scope>
+                <!-- CAUTION: This is an evil JAR with several old versions of libraries as embedded dependencies that aren't exported
+                    and can conflict with your code. Use "optional" so that at least doesn't conflict with artifacts
+                    using a bundle that uses the sling.xss bundle. https://issues.apache.org/jira/browse/SLING-8404
+                    -->
+                <optional>true</optional>
             </dependency>
 
             <dependency>

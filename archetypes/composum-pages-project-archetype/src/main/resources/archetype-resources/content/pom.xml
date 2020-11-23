@@ -11,8 +11,8 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>content-package</packaging>
 
-    <name>${name} Content</name>
-    <description>Content package for ${rootArtifactId}. ${description}</description>
+    <name>${projectname} Content</name>
+    <description>Content package for ${rootArtifactId}. ${projectdescription}</description>
 
     <build>
         <resources>

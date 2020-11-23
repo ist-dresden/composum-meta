@@ -23,11 +23,11 @@
       <defaultValue>${tenant}-${domain}-${project}</defaultValue>
       <validationRegex>[a-zA-Z0-9._-]+</validationRegex>
     </requiredProperty>
-    <requiredProperty key="name"/>
-    <requiredProperty key="description"/>
+    <requiredProperty key="projectname"/>
+    <requiredProperty key="projectdescription"/>
   </requiredProperties>
   <fileSets>
-    <fileSet encoding="UTF-8">
+    <fileSet encoding="UTF-8" filtered="true">
       <directory></directory>
       <includes>
         <include>README.md</include>

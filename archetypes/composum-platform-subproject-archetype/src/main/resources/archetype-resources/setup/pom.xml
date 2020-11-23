@@ -11,11 +11,16 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>jar</packaging>
 
-    <name>${name} setup hook</name>
-    <description>the setup implementation code for ${description}</description>
+    <name>${projectname} setup hook</name>
+    <description>the setup implementation code for ${projectdescription}</description>
 
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+            </plugin>
 
             <!-- set main class -->
             <plugin>
