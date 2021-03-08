@@ -6,7 +6,7 @@
 
     <groupId>com.composum.meta.ist</groupId>
     <artifactId>parent-root</artifactId>
-    <version>1.4-SNAPSHOT</version>
+    <version>1.4</version>
     <packaging>pom</packaging>
 
     <name>IST parent root</name>
@@ -58,7 +58,6 @@
         <package.install>/bin/cpm/package.service.html</package.install>
 
         <sling.starter.version>11</sling.starter.version>
-        <sling.starter.dependency.version>11-SNAPSHOT</sling.starter.dependency.version>
 
         <!-- Some software versions -->
         <com.spotify.dockerfile.version>1.4.12</com.spotify.dockerfile.version>
