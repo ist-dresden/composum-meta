@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.composum.meta.ist</groupId>
         <artifactId>parent-root</artifactId>
-        <version>1.4-SNAPSHOT</version>
+        <version>1.4</version>
     </parent>
 
     <artifactId>parent-2</artifactId>
@@ -19,7 +19,8 @@
 
     <properties>
         <sling-starter-dependencies-artifactId>sling-starter-dependencies-11</sling-starter-dependencies-artifactId>
-        <sling-starter-dependencies-version>1.4-SNAPSHOT</sling-starter-dependencies-version>
+        <sling-starter-dependencies-version>1.3</sling-starter-dependencies-version>
+
         <!-- These properties have to be adapted to the appropriate versions for the sling version - that is, the
             versions included in tika-parser https://mvnrepository.com/artifact/org.apache.tika/tika-parsers since they are missing
              https://issues.apache.org/jira/browse/SLING-7125 . These are embedded in Composum Assets . -->
@@ -126,7 +127,7 @@
             <dependency>
                 <groupId>org.hamcrest</groupId>
                 <artifactId>hamcrest-core</artifactId>
-                <version>1.4-SNAPSHOT</version>
+                <version>1.3</version>
                 <scope>test</scope>
             </dependency>
 
@@ -134,7 +135,7 @@
             <dependency>
                 <groupId>org.hamcrest</groupId>
                 <artifactId>hamcrest-library</artifactId>
-                <version>1.4-SNAPSHOT</version>
+                <version>1.3</version>
                 <scope>test</scope>
             </dependency>
 
@@ -357,6 +358,8 @@
                     <executions>
                         <execution>
                             <id>minify-javascripts</id>
+                            <phase>generate-resources</phase>
+                            <goals></goals>
                             <configuration>
                                 <!-- source maps wouldn't work since js are combined into one file later. -->
                                 <closureCreateSourceMap>false</closureCreateSourceMap>
@@ -387,9 +390,6 @@
                                     <cssSourceExclude>**</cssSourceExclude>
                                 </cssSourceExcludes>
                             </configuration>
-                            <goals>
-                                <goal>minify</goal>
-                            </goals>
                         </execution>
                     </executions>
                 </plugin>
@@ -475,8 +475,6 @@
                     <artifactId>sling-maven-plugin</artifactId>
                     <version>2.4.2</version>
                     <configuration>
-                        <slingUrl>${sling.scheme}://${sling.host}:${sling.port}${sling.context}/system/console/install
-                        </slingUrl>
                         <user>${sling.user}</user>
                         <password>${sling.password}</password>
                         <failOnError>true</failOnError>
@@ -668,7 +666,7 @@
 
         <!-- A couple of standard profiles that are filled on many projects. -->
         <profile>
-            <id>installBundle</id>
+            <id>uploadBundle</id>
         </profile>
         <profile>
             <id>installPackage</id>
@@ -683,13 +681,12 @@
             <id>installMapping</id>
         </profile>
 
-        <!-- Profile usable for local deployments on a Sling Starter at port 9090  -->
+        <!-- Profile usable for local deployments on a Sling Starter at port 9090;
+             blueprint: configure your own profiles for each instance, e.g. in the Maven settings.xml -->
         <profile>
             <id>cpmLocal</id>
             <properties>
-
-                <!-- For local deployments -->
-                <sling.scheme>http</sling.scheme> <!-- FIXME include here? profile? -->
+                <sling.scheme>http</sling.scheme>
                 <sling.secure>false</sling.secure>
                 <sling.host>localhost</sling.host>
                 <sling.port>9090</sling.port>
