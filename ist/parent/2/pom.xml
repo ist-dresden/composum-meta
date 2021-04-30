@@ -25,7 +25,7 @@
         <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.feature.extension.content -->
         <org.apache.sling.feature.extension.content.version>1.0.10</org.apache.sling.feature.extension.content.version>
         <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.jcr.packageinit -->
-        <org.apache.sling.jcr.packageinit.version>1.0.4</org.apache.sling.jcr.packageinit.version>
+        <org.apache.sling.jcr.packageinit.version>1.0.2</org.apache.sling.jcr.packageinit.version>
 
         <!-- These properties have to be adapted to the appropriate versions for the sling version - that is, the
             versions included in tika-parser https://mvnrepository.com/artifact/org.apache.tika/tika-parsers since they are missing
