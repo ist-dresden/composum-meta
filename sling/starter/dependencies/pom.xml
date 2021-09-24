@@ -52,7 +52,7 @@
         </repository>
         <snapshotRepository>
             <id>istrepo</id>
-            <url>https://build.ist-software.com/nexus/repository/maven-snapshots</url>
+            <url>https://repo.ist-software.com/repository/maven-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
