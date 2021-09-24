@@ -21,11 +21,11 @@
     <distributionManagement>
         <repository>
             <id>istrepo</id>
-            <url>https://repo.ist-software.com/repository/maven-releases</url>
+            <url>https://build.ist-software.com/nexus/repository/maven-releases</url>
         </repository>
         <snapshotRepository>
             <id>istrepo</id>
-            <url>https://repo.ist-software.com/repository/maven-snapshots</url>
+            <url>https://build.ist-software.com/nexus/repository/maven-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 

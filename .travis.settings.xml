@@ -27,7 +27,7 @@
             <id>istrepo</id>
             <name>istrepo</name>
             <mirrorOf>*</mirrorOf>
-            <url>https://repo.ist-software.com/repository/maven-public</url>
+            <url>https://build.ist-software.com/nexus/repository/maven-public</url>
         </mirror>
         <!-- -->
     </mirrors>
@@ -70,7 +70,7 @@
                 <repository>
                     <id>istrepo-internal</id>
                     <name>istrepo</name>
-                    <url>https://repo.ist-software.com/repository/maven-releases</url>
+                    <url>https://build.ist-software.com/nexus/repository/maven-releases</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
@@ -78,7 +78,7 @@
                 <repository>
                     <id>istrepo-snapshots</id>
                     <name>istrepo</name>
-                    <url>https://repo.ist-software.com/repository/maven-snapshots</url>
+                    <url>https://build.ist-software.com/nexus/repository/maven-snapshots</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
@@ -88,7 +88,7 @@
                 <pluginRepository>
                     <id>istrepo-internal</id>
                     <name>istrepo</name>
-                    <url>https://repo.ist-software.com/repository/maven-releases</url>
+                    <url>https://build.ist-software.com/nexus/repository/maven-releases</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
@@ -96,7 +96,7 @@
                 <pluginRepository>
                     <id>istrepo-snapshots</id>
                     <name>istrepo</name>
-                    <url>https://repo.ist-software.com/repository/maven-snapshots</url>
+                    <url>https://build.ist-software.com/nexus/repository/maven-snapshots</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
