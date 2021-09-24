@@ -6,7 +6,7 @@
 
     <groupId>com.composum.meta.ist</groupId>
     <artifactId>parent-root</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.5</version>
     <packaging>pom</packaging>
 
     <name>IST parent root</name>
@@ -79,8 +79,8 @@
             <url>${release.repository.url}</url>
         </repository>
         <snapshotRepository>
-            <id>archiva</id>
-            <url>https://build.ist-software.com/nexus/repository/maven-snapshots</url>
+            <id>istrepo</id>
+            <url>https://repo.ist-software.com/repository/maven-snapshots</url>
         </snapshotRepository>
         <site>
             <id>api.composum.com</id>
