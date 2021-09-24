@@ -6,7 +6,7 @@
     <groupId>com.composum.meta</groupId>
     <artifactId>composum-meta-root</artifactId>
     <packaging>pom</packaging>
-    <version>2</version>
+    <version>3-SNAPSHOT</version>
 
     <name>Composum Meta Root</name>
     <description>Maven parent for Composum Meta stuff</description>
