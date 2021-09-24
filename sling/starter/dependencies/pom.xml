@@ -6,7 +6,7 @@
 
     <groupId>com.composum.meta.sling.dependencies</groupId>
     <artifactId>sling-starter-dependencies-parent</artifactId>
-    <version>1.4-SNAPSHOT</version>
+    <version>1.4</version>
     <packaging>pom</packaging>
 
     <name>Parent root for Sling related POMs</name>
@@ -51,8 +51,8 @@
             <url>${release.repository.url}</url>
         </repository>
         <snapshotRepository>
-            <id>archiva</id>
-            <url>https://build.ist-software.com/nexus/repository/maven-snapshots</url>
+            <id>istrepo</id>
+            <url>https://repo.ist-software.com/repository/maven-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
