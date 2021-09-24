@@ -22,14 +22,14 @@
     </servers>
 
     <mirrors>
-        <!-- ->
+        <!-- -->
         <mirror>
             <id>istrepo</id>
             <name>istrepo</name>
             <mirrorOf>*</mirrorOf>
             <url>https://repo.ist-software.com/repository/maven-public</url>
         </mirror>
-        <!- -->
+        <!-- -->
     </mirrors>
 
     <profiles>
