@@ -759,7 +759,7 @@
             </plugins>
         </pluginManagement>
 
-        <!--extensions>
+        <extensions>
             <extension>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-extension</artifactId>
@@ -770,7 +770,7 @@
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>${com.spotify.dockerfile.version}</version>
             </extension>
-        </extensions-->
+        </extensions>
     </build>
 
     <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-project-info-reports-plugin -->
