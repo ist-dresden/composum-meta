@@ -614,11 +614,19 @@
                 </plugin>
 
                 <plugin>
+                    <!-- DEPRECATED: not really maintained anymore. Please use io.fabric8:docker-maven-plugin . -->
                     <!-- https://github.com/spotify/dockerfile-maven -->
                     <!-- https://mvnrepository.com/artifact/com.spotify/dockerfile-maven -->
                     <groupId>com.spotify</groupId>
                     <artifactId>dockerfile-maven-plugin</artifactId>
                     <version>${com.spotify.dockerfile.version}</version>
+                </plugin>
+
+                <!-- https://mvnrepository.com/artifact/io.fabric8/docker-maven-plugin -->
+                <plugin>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>0.39.1</version>
                 </plugin>
 
                 <plugin>
