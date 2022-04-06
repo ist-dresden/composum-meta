@@ -613,15 +613,6 @@
                     </configuration>
                 </plugin>
 
-                <plugin>
-                    <!-- DEPRECATED: not really maintained anymore. Please use io.fabric8:docker-maven-plugin . -->
-                    <!-- https://github.com/spotify/dockerfile-maven -->
-                    <!-- https://mvnrepository.com/artifact/com.spotify/dockerfile-maven -->
-                    <groupId>com.spotify</groupId>
-                    <artifactId>dockerfile-maven-plugin</artifactId>
-                    <version>${com.spotify.dockerfile.version}</version>
-                </plugin>
-
                 <!-- https://mvnrepository.com/artifact/io.fabric8/docker-maven-plugin -->
                 <plugin>
                     <groupId>io.fabric8</groupId>
@@ -706,7 +697,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>slingfeature-maven-plugin</artifactId>
-                    <version>1.5.0</version>
+                    <version>1.6.4</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.sling/sling-kickstart-maven-plugin -->
@@ -720,7 +711,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>feature-launcher-maven-plugin</artifactId>
-                    <version>0.1.0</version>
+                    <version>0.1.2</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.sling/sling-feature-converter-maven-plugin -->
@@ -767,18 +758,6 @@
             </plugins>
         </pluginManagement>
 
-        <extensions>
-            <extension>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-extension</artifactId>
-                <version>${com.spotify.dockerfile.version}</version>
-            </extension>
-            <extension>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>${com.spotify.dockerfile.version}</version>
-            </extension>
-        </extensions>
     </build>
 
     <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-project-info-reports-plugin -->

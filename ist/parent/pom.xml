@@ -57,11 +57,7 @@
         <package.company>IST GmbH Dresden</package.company>
         <package.install>/bin/cpm/package.service.html</package.install>
 
-        <sling.starter.version>11</sling.starter.version>
-
-        <!-- Some software versions -->
-        <!-- DEPRECATED: spotify.dockerfile not really maintained anymore. Rather use io.fabric8:docker-maven-plugin . -->
-        <com.spotify.dockerfile.version>1.4.12</com.spotify.dockerfile.version>
+        <sling.starter.version>12</sling.starter.version>
 
         <!-- development properties placeholders -->
         <sling.scheme>http</sling.scheme>
