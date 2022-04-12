@@ -283,6 +283,21 @@
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>enforce-no-snapshots-in-releases</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireReleaseDeps>
+                                    <onlyWhenRelease>true</onlyWhenRelease>
+                                    <message>In a release there should be no snapshots used!</message>
+                                </requireReleaseDeps>
+                            </rules>
+                            <fail>true</fail>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>misc-validations</id>
                         <goals>
                             <goal>enforce</goal>
@@ -387,6 +402,7 @@
                         <encoding>${source.encoding}</encoding>
                         <failOnError>false</failOnError>
                         <quiet>true</quiet>
+                        <notimestamp>true</notimestamp>
                     </configuration>
                 </plugin>
 
@@ -848,6 +864,37 @@
                 <bundle.status.skip>true</bundle.status.skip>
             </properties>
         </profile>
+
+
+        <profile>
+            <!-- If activated, verifies that all artifacts are snapshots, e.g. for snapshot deployment in CI -->
+            <id>ensureSnapshots</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>enforce-only-snapshots-in-develop</id>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <requireSnapshotVersion>
+                                            <failWhenParentIsRelease>false</failWhenParentIsRelease>
+                                            <message>In branches other than master there should only be snapshots</message>
+                                        </requireSnapshotVersion>
+                                    </rules>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
     </profiles>
 
 </project>
