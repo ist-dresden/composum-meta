@@ -8,6 +8,11 @@ name: Create Release
 
 on:
   workflow_dispatch:
+    inputs:
+      dryrun:
+        type: boolean
+        description: 'Dry run? If given, the release will be built but dropped afterwards from OSSRH, and the git changes will not be pushed.'
+        default: false
 
 jobs:
   createrelease:
@@ -92,7 +97,7 @@ jobs:
         # unfortunately, this would require a snapshot parent if just called from the command line, so we cannot use it: :-(
         # mvn org.apache.maven.plugins:maven-enforcer-plugin:3.2.1:enforce -Drules=requireSnapshotVersion
 
-    - name: Dry run
+    - name: Dry run of release goals
       continue-on-error: true
       run: |
         mvn -version
@@ -139,16 +144,27 @@ jobs:
         git status --untracked-files --ignored
 
     - name: Push changes
+      if: ${{ !github.event.inputs.dryrun }}
       run: |
-        git push origin --follow-tags -v
+        echo FIXME git push origin --follow-tags -v
 
     - name: Release to maven central repository
+      if: ${{ !github.event.inputs.dryrun }}
       env:
         OSSRH_USER: ${{ secrets.OSSRH_USER  }}
         OSSRH_PASSWD: ${{ secrets.OSSRH_PASSWD  }}
       run: |
         cd target/checkout
-        mvn -B --no-transfer-progress -s ../../.github/settings-istrepo.xml -P nexus-staging nexus-staging:release
+        echo FIXME mvn -B --no-transfer-progress -s ../../.github/settings-istrepo.xml -P nexus-staging nexus-staging:release
+
+    - name: Drop from OSSRH on dryrun
+      if: ${{ github.event.inputs.dryrun }}
+      env:
+        OSSRH_USER: ${{ secrets.OSSRH_USER  }}
+        OSSRH_PASSWD: ${{ secrets.OSSRH_PASSWD  }}
+      run: |
+        cd target/checkout
+        echo FIXME mvn -B --no-transfer-progress -s ../../.github/settings-istrepo.xml -P nexus-staging nexus-staging:drop
 
     - name: List target files even if recipe fails
       if: always()
