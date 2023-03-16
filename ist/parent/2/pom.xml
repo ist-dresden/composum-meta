@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>com.composum.meta.ist</groupId>
         <artifactId>parent-root</artifactId>
-        <version>1.5.1-SNAPSHOT</version>
+        <version>1.5.1</version>
     </parent>
 
     <artifactId>parent-2</artifactId>
@@ -266,7 +264,7 @@
                         <phase>validate</phase>
                         <configuration>
                             <rules>
-                                <banDuplicatePomDependencyVersions/>
+                                <banDuplicatePomDependencyVersions />
                             </rules>
                         </configuration>
                     </execution>
@@ -414,7 +412,7 @@
                         <execution>
                             <id>minify-javascripts</id>
                             <phase>generate-resources</phase>
-                            <goals></goals>
+                            <goals />
                             <configuration>
                                 <!-- source maps wouldn't work since js are combined into one file later. -->
                                 <closureCreateSourceMap>false</closureCreateSourceMap>
@@ -836,7 +834,7 @@
                 <sling.secure>false</sling.secure>
                 <sling.host>localhost</sling.host>
                 <sling.port>9090</sling.port>
-                <sling.context></sling.context>
+                <sling.context />
                 <sling.user>admin</sling.user>
                 <sling.password>admin</sling.password>
                 <bundle.status.skip>true</bundle.status.skip>
