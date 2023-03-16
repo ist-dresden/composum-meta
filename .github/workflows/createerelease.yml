@@ -152,12 +152,12 @@ jobs:
         git status --untracked-files --ignored
 
     - name: Push changes
-      if: ${{ !github.event.inputs.dryrun }}
+      if: ${{ github.event.inputs.dryrun == 'false' }}
       run: |
         git push origin --follow-tags -v
 
     - name: Release to maven central repository
-      if: ${{ !github.event.inputs.dryrun }}
+      if: ${{ github.event.inputs.dryrun == 'false' }}
       env:
         OSSRH_USER: ${{ secrets.OSSRH_USER  }}
         OSSRH_PASSWD: ${{ secrets.OSSRH_PASSWD  }}
@@ -167,7 +167,7 @@ jobs:
         ${{ env.MVNCMD }} nexus-staging:release
 
     - name: Drop from OSSRH on dryrun
-      if: ${{ github.event.inputs.dryrun }}
+      if: ${{ github.event.inputs.dryrun != 'false' }}
       env:
         OSSRH_USER: ${{ secrets.OSSRH_USER  }}
         OSSRH_PASSWD: ${{ secrets.OSSRH_PASSWD  }}
