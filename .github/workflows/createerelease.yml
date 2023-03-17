@@ -20,6 +20,8 @@ on:
 
 jobs:
   createrelease:
+    name: Create Release of branch ${{ github.ref }} in ${{ github.event.inputs.subdir }} , dryrun=${{ github.event.inputs.dryrun }}
+
     runs-on: ubuntu-latest
 
     env:
