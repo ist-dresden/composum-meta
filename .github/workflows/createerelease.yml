@@ -138,7 +138,7 @@ jobs:
         OSSRH_PASSWD: ${{ secrets.OSSRH_PASSWD  }}
         GPG_PASSPHRASE : ${{ secrets.GPG_PASSPHRASE }}
       run: |
-        ${{ env.MVNCMD }} --no-transfer-progress release:perform -DlocalCheckout=true -DdeployAtEnd=true -f ${{ env.SUBDIR }}/pom.xml" "-Dgoals=clean install package source:jar javadoc:jar deploy"
+        ${{ env.MVNCMD }} --no-transfer-progress release:perform -DlocalCheckout=true -DdeployAtEnd=true -f "${{ env.SUBDIR }}/pom.xml" "-Dgoals=clean install package source:jar javadoc:jar deploy"
 
     - name: Git Status after perform
       if: always()
