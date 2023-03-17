@@ -4,7 +4,7 @@
 
     <groupId>com.composum.meta.ist</groupId>
     <artifactId>parent-root</artifactId>
-    <version>1.5.2-SNAPSHOT</version>
+    <version>1.5.2</version>
     <packaging>pom</packaging>
 
     <name>IST parent root</name>
@@ -92,7 +92,7 @@
         <connection>scm:git:https://github.com/ist-dresden/composum-meta.git</connection>
         <developerConnection>scm:git:https://github.com/ist-dresden/composum-meta.git</developerConnection>
         <url>https://github.com/ist-dresden/composum-meta.git</url>
-      <tag>HEAD</tag>
+      <tag>parent-root-1.5.2</tag>
   </scm>
 
     <modules>
