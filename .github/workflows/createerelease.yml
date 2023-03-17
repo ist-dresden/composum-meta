@@ -112,7 +112,7 @@ jobs:
         echo "Dry run of release goals: clean"
         ${{ env.MVNCMD }} clean release:clean
         echo "Dry run of release goals: prepare"
-        ${{ env.MVNCMD }} release:prepare -DdryRun=true -DpushChanges=false -Dgpg.skip=true
+        ${{ env.MVNCMD }} release:prepare -DdryRun=true -DpushChanges=false -Dgpg.skip=true -Dgpg.passphrase="unused"
         echo "Dry run of release goals: perform"
         ${{ env.MVNCMD }} release:perform -DdryRun=true -DlocalCheckout=true -DdeployAtEnd=true
         echo "Dry run of release goals: clean"
