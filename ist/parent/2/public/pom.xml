@@ -18,6 +18,7 @@
         <release.repository.id>ossrh</release.repository.id>
         <release.repository.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</release.repository.url>
         <release.autoReleaseAfterClose>false</release.autoReleaseAfterClose>
+        <release.keyname>info@composum.com</release.keyname>
     </properties>
 
     <profiles>
@@ -61,7 +62,7 @@
                                     <goal>sign</goal>
                                 </goals>
                                 <configuration>
-                                    <keyname>info@composum.com</keyname>
+                                    <keyname>${release.keyname}</keyname>
                                 </configuration>
                             </execution>
                         </executions>
