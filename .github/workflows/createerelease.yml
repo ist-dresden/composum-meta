@@ -109,9 +109,13 @@ jobs:
 
     - name: Dry run of release goals
       run: |
+        echo "Dry run of release goals: clean"
         ${{ env.MVNCMD }} clean release:clean
+        echo "Dry run of release goals: prepare"
         ${{ env.MVNCMD }} release:prepare -DdryRun=true -DpushChanges=false -Dgpg.skip=true
+        echo "Dry run of release goals: perform"
         ${{ env.MVNCMD }} release:perform -DdryRun=true -DlocalCheckout=true -DdeployAtEnd=true
+        echo "Dry run of release goals: clean"
         ${{ env.MVNCMD }} clean release:clean
         git clean -f -d -x
 
