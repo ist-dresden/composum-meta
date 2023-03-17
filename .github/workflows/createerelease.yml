@@ -5,6 +5,7 @@
 # with no harm done and no traces in git.
 
 name: Create Release
+run-name: Create Release of ${{ github.ref_name }} in ${{ inputs.subdir }} , dryrun=${{ inputs.dryrun }}
 
 on:
   workflow_dispatch:
@@ -20,7 +21,7 @@ on:
 
 jobs:
   createrelease:
-    name: Create Release of branch ${{ github.ref }} in ${{ github.event.inputs.subdir }} , dryrun=${{ github.event.inputs.dryrun }}
+    name: Create Release
 
     runs-on: ubuntu-latest
 
