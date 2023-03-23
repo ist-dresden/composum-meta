@@ -24,6 +24,8 @@
         <org.apache.sling.feature.extension.content.version>1.0.10</org.apache.sling.feature.extension.content.version>
         <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.jcr.packageinit -->
         <org.apache.sling.jcr.packageinit.version>1.0.2</org.apache.sling.jcr.packageinit.version>
+        <!-- Used in platform-cache, so be careful before updating.-->
+        <org.ehcache.ehcache.version>3.9.11</org.ehcache.ehcache.version>
 
         <!-- These properties have to be adapted to the appropriate versions for the sling version - that is, the
             versions included in tika-parser https://mvnrepository.com/artifact/org.apache.tika/tika-parsers since they are missing
@@ -108,6 +110,13 @@
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.jcr.packageinit</artifactId>
                 <version>${org.apache.sling.jcr.packageinit.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.ehcache/ehcache . Used in platform. -->
+            <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>${org.ehcache.ehcache.version}</version>
             </dependency>
 
             <!-- Java Annotations -->
