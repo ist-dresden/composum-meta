@@ -744,7 +744,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>slingfeature-maven-plugin</artifactId>
-                    <version>1.6.4</version>
+                    <version>1.6.8</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.sling/sling-kickstart-maven-plugin -->
@@ -758,7 +758,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>feature-launcher-maven-plugin</artifactId>
-                    <version>0.1.2</version>
+                    <version>0.1.4</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.sling/sling-feature-converter-maven-plugin -->
@@ -802,6 +802,7 @@
                     <version>2.22.2</version>
                 </plugin>
 
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-release-plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
