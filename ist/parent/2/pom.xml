@@ -678,14 +678,14 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.8.2</version>
+                    <version>3.12.1</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-project-info-reports-plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>3.4.2</version>
+                    <version>3.4.5</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
@@ -744,7 +744,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>slingfeature-maven-plugin</artifactId>
-                    <version>1.6.8</version>
+                    <version>1.7.0</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.sling/sling-kickstart-maven-plugin -->
