@@ -17,8 +17,6 @@ To create a project using the archetype you can do for instance:
 
     mvn archetype:generate -DarchetypeGroupId=com.composum.meta.ist.archetype -DarchetypeArtifactId=composum-platform-subproject-archetype
  
-Caution: there are some properties that have defaults; if you want to change them you have to press 'N'. Compare https://issues.apache.org/jira/browse/ARCHETYPE-308
- 
 ### Archetype maintenance
 
 For updating the archetypes present in the local repository: `mvn archetype:crawl` ; possibly use `mvn archetype:update-local-catalog` .

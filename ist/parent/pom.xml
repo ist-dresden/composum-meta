@@ -20,18 +20,21 @@
 
     <developers>
         <developer>
+            <id>hp.stoerr</id>
             <name>Hans-Peter Störr</name>
             <email>hp.stoerr@ist-software.com</email>
             <organization>IST GmbH Dresden</organization>
             <organizationUrl>http://www.ist-software.com</organizationUrl>
         </developer>
         <developer>
+            <id>r.wunsch</id>
             <name>Ralf Wunsch</name>
             <email>r.wunsch@ist-software.com</email>
             <organization>IST GmbH Dresden</organization>
             <organizationUrl>http://www.ist-software.com</organizationUrl>
         </developer>
         <developer>
+            <id>m.zeibig</id>
             <name>Mirko Zeibig</name>
             <email>m.zeibig@ist-software.com</email>
             <organization>IST GmbH Dresden</organization>
