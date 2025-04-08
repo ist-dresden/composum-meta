@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.composum.meta.ist</groupId>
     <artifactId>parent-root</artifactId>
-    <version>1.7</version>
+    <version>1.8-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>IST parent root</name>
@@ -62,11 +63,11 @@
         <!-- development properties placeholders -->
         <sling.scheme>http</sling.scheme>
         <sling.secure>false</sling.secure>
-        <sling.host />
-        <sling.port />
-        <sling.context />
-        <sling.user />
-        <sling.password />
+        <sling.host/>
+        <sling.port/>
+        <sling.context/>
+        <sling.user/>
+        <sling.password/>
         <bundle.status.skip>true</bundle.status.skip>
     </properties>
 
@@ -75,10 +76,6 @@
             <id>${release.repository.id}</id>
             <url>${release.repository.url}</url>
         </repository>
-        <snapshotRepository>
-            <id>istrepo</id>
-            <url>https://repo.ist-software.com/repository/maven-snapshots</url>
-        </snapshotRepository>
         <site>
             <id>api.composum.com</id>
             <url>scp://api.composum.com/var/www/composum/api/public/</url>
@@ -89,8 +86,8 @@
         <connection>scm:git:https://github.com/ist-dresden/composum-meta.git</connection>
         <developerConnection>scm:git:https://github.com/ist-dresden/composum-meta.git</developerConnection>
         <url>https://github.com/ist-dresden/composum-meta.git</url>
-      <tag>parent-root-1.7</tag>
-  </scm>
+        <tag>parent-root-1.8</tag>
+    </scm>
 
     <modules>
         <module>2</module>
@@ -98,6 +95,39 @@
     </modules>
 
     <profiles>
+        <profile>
+            <id>adobe-public</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>adobe-public</id>
+                    <name>Adobe Public Repository</name>
+                    <url>https://repo.adobe.com/nexus/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>adobe-public-releases</id>
+                    <name>Adobe Public Repository</name>
+                    <url>https://repo.adobe.com/nexus/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
         <profile>
             <!-- profile to release the artifacts for the public repository -->
             <id>nexus-staging</id>
