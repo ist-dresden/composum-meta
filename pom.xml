@@ -18,6 +18,17 @@
         <!--module>archetypes</module-->
     </modules>
 
+    <distributionManagement>
+        <repository>
+            <id>istrepo</id>
+            <url>https://repo.ist-software.com/repository/maven-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>istrepo</id>
+            <url>https://repo.ist-software.com/repository/maven-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <scm>
         <connection>scm:git:https://github.com/ist-dresden/composum-meta.git</connection>
         <developerConnection>scm:git:https://github.com/ist-dresden/composum-meta.git</developerConnection>
