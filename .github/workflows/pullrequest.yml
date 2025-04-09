@@ -20,4 +20,4 @@ jobs:
         cache: maven
 
     - name: Build with Maven
-      run: mvn -s .github/settings-istrepo.xml -B verify
+      run: mvn -s .github/settings-public.xml -B verify
