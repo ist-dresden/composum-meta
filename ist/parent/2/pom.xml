@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.composum.meta.ist</groupId>
         <artifactId>parent-root</artifactId>
-        <version>1.7</version>
+        <version>1.8</version>
     </parent>
 
     <artifactId>parent-2</artifactId>
@@ -24,6 +24,8 @@
         <org.apache.sling.feature.extension.content.version>1.0.10</org.apache.sling.feature.extension.content.version>
         <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.jcr.packageinit -->
         <org.apache.sling.jcr.packageinit.version>1.0.2</org.apache.sling.jcr.packageinit.version>
+        <!-- Used in platform-cache, so be careful before updating.-->
+        <org.ehcache.ehcache.version>3.9.11</org.ehcache.ehcache.version>
 
         <!-- These properties have to be adapted to the appropriate versions for the sling version - that is, the
             versions included in tika-parser https://mvnrepository.com/artifact/org.apache.tika/tika-parsers since they are missing
@@ -108,6 +110,13 @@
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.jcr.packageinit</artifactId>
                 <version>${org.apache.sling.jcr.packageinit.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.ehcache/ehcache . Used in platform. -->
+            <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>${org.ehcache.ehcache.version}</version>
             </dependency>
 
             <!-- Java Annotations -->
@@ -217,8 +226,8 @@
                 <!-- 2.1.10-1.16.0 has problems because of https://issues.apache.org/jira/browse/SLING-9659 , see
                  private/incubator/tests/slingmocktest/src/test/java/com/composum/test/slingmocktest/SlingNamespaceCheckTest.java
                  -->
-                <!-- <version>2.1.10-1.16.0</version> -->
-                <version>3.1.4-1.40.0</version>
+                <!-- We go rather low here: there is already 3.1.8-1.44.0 but that requires oak 1.44, which is only in later Sling/AEM versions. -->
+                <version>3.0.0-1.16.0</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -231,12 +240,11 @@
 
             <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.testing.sling-mock.junit4 -->
             <!-- replaces org.apache.sling.testing.sling-mock -->
-            <!-- This triggers https://issues.apache.org/jira/browse/SLING-8576 which needs a workaround. This workaround
-             should be removed from the POMs once this is updated. -->
             <dependency>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.testing.sling-mock.junit4</artifactId>
-                <version>3.4.2</version>
+                <!-- Similarily to org.apache.sling.testing.sling-mock-oak we go low here, to avoid needing a too high oak version -->
+                <version>3.1.2</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -251,7 +259,8 @@
             <dependency>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.testing.sling-mock.junit5</artifactId>
-                <version>3.4.2</version>
+                <!-- Similarily to org.apache.sling.testing.sling-mock-oak we go low here, to avoid needing a too high oak version -->
+                <version>3.1.2</version>
                 <scope>test</scope>
             </dependency>
 
@@ -655,7 +664,7 @@
                 <plugin>
                     <groupId>io.fabric8</groupId>
                     <artifactId>docker-maven-plugin</artifactId>
-                    <version>0.39.1</version>
+                    <version>0.42.0</version>
                 </plugin>
 
                 <plugin>
@@ -669,14 +678,14 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.8.2</version>
+                    <version>3.12.1</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-project-info-reports-plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>3.4.2</version>
+                    <version>3.4.5</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
@@ -735,7 +744,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>slingfeature-maven-plugin</artifactId>
-                    <version>1.6.4</version>
+                    <version>1.7.0</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.sling/sling-kickstart-maven-plugin -->
@@ -749,7 +758,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>feature-launcher-maven-plugin</artifactId>
-                    <version>0.1.2</version>
+                    <version>0.1.4</version>
                 </plugin>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.sling/sling-feature-converter-maven-plugin -->
@@ -793,6 +802,7 @@
                     <version>2.22.2</version>
                 </plugin>
 
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-release-plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>

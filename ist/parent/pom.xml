@@ -4,7 +4,7 @@
 
     <groupId>com.composum.meta.ist</groupId>
     <artifactId>parent-root</artifactId>
-    <version>1.7</version>
+    <version>1.8-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>IST parent root</name>
@@ -20,18 +20,21 @@
 
     <developers>
         <developer>
+            <id>hp.stoerr</id>
             <name>Hans-Peter Störr</name>
             <email>hp.stoerr@ist-software.com</email>
             <organization>IST GmbH Dresden</organization>
             <organizationUrl>http://www.ist-software.com</organizationUrl>
         </developer>
         <developer>
+            <id>r.wunsch</id>
             <name>Ralf Wunsch</name>
             <email>r.wunsch@ist-software.com</email>
             <organization>IST GmbH Dresden</organization>
             <organizationUrl>http://www.ist-software.com</organizationUrl>
         </developer>
         <developer>
+            <id>m.zeibig</id>
             <name>Mirko Zeibig</name>
             <email>m.zeibig@ist-software.com</email>
             <organization>IST GmbH Dresden</organization>
@@ -75,10 +78,6 @@
             <id>${release.repository.id}</id>
             <url>${release.repository.url}</url>
         </repository>
-        <snapshotRepository>
-            <id>istrepo</id>
-            <url>https://repo.ist-software.com/repository/maven-snapshots</url>
-        </snapshotRepository>
         <site>
             <id>api.composum.com</id>
             <url>scp://api.composum.com/var/www/composum/api/public/</url>
@@ -89,8 +88,8 @@
         <connection>scm:git:https://github.com/ist-dresden/composum-meta.git</connection>
         <developerConnection>scm:git:https://github.com/ist-dresden/composum-meta.git</developerConnection>
         <url>https://github.com/ist-dresden/composum-meta.git</url>
-      <tag>parent-root-1.7</tag>
-  </scm>
+        <tag>parent-root-1.8</tag>
+    </scm>
 
     <modules>
         <module>2</module>
@@ -98,6 +97,40 @@
     </modules>
 
     <profiles>
+        <profile>
+            <!-- profile to include adobe plugin repository -->
+            <id>plugin-repos</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <pluginRepositories>
+                <pluginRepository>
+                    <!-- prefer maven central plugin repo -->
+                    <id>central</id>
+                    <name>Central Repository</name>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>adobe-public-releases</id>
+                    <name>Adobe Public Repository</name>
+                    <url>https://repo.adobe.com/nexus/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
         <profile>
             <!-- profile to release the artifacts for the public repository -->
             <id>nexus-staging</id>
