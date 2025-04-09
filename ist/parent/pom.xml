@@ -98,24 +98,25 @@
 
     <profiles>
         <profile>
-            <id>adobe-public</id>
+            <!-- profile to include adobe plugin repository -->
+            <id>plugin-repos</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <repositories>
-                <repository>
-                    <id>adobe-public</id>
-                    <name>Adobe Public Repository</name>
-                    <url>https://repo.adobe.com/nexus/content/groups/public</url>
+            <pluginRepositories>
+                <pluginRepository>
+                    <!-- prefer maven central plugin repo -->
+                    <id>central</id>
+                    <name>Central Repository</name>
                     <releases>
                         <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
-                </repository>
-            </repositories>
-            <pluginRepositories>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                </pluginRepository>
                 <pluginRepository>
                     <id>adobe-public-releases</id>
                     <name>Adobe Public Repository</name>
