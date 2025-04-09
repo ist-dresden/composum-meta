@@ -23,7 +23,7 @@ jobs:
 
     - name: Build with Maven
       # When parent-2:1.7 is active, -P ensureSnapshots will do a sanity check of the version number
-      run: mvn -s .github/settings-public.xml -P ensureSnapshots -B verify
+      run: mvn -s .github/settings.xml -P ensureSnapshots -B verify
 
 #    - name: Sanitycheck version before deploying
 #      run: |
