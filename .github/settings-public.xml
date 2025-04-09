@@ -4,6 +4,18 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <!-- Try building with only the public repositories -->
 
+    <servers>
+        <server>
+            <id>ossrh</id>
+            <username>${env.OSSRH_USER}</username>
+            <password>${env.OSSRH_PASSWD}</password>
+        </server>
+        <server>
+            <id>gpg.passphrase</id>
+            <passphrase>${env.GPG_PASSPHRASE}</passphrase>
+        </server>
+    </servers>
+
     <profiles>
 
         <!-- https://repo.adobe.com/index.html
