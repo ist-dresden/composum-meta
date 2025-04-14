@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.composum.meta.ist</groupId>
     <artifactId>parent-root</artifactId>
-    <version>1.9-SNAPSHOT</version>
+    <version>1.8.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>IST parent root</name>
@@ -65,11 +66,11 @@
         <!-- development properties placeholders -->
         <sling.scheme>http</sling.scheme>
         <sling.secure>false</sling.secure>
-        <sling.host />
-        <sling.port />
-        <sling.context />
-        <sling.user />
-        <sling.password />
+        <sling.host/>
+        <sling.port/>
+        <sling.context/>
+        <sling.user/>
+        <sling.password/>
         <bundle.status.skip>true</bundle.status.skip>
     </properties>
 
@@ -98,11 +99,38 @@
 
     <profiles>
         <profile>
-            <!-- profile to include adobe plugin repository -->
-            <id>plugin-repos</id>
+            <id>public-repositories</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <repositories>
+                <repository>
+                    <!-- prefer maven central plugin repo -->
+                    <id>central</id>
+                    <name>Central Repository</name>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                </repository>
+                <repository>
+                    <!-- but fall back to adobe repo for the missing things -->
+                    <id>adobe-public-releases</id>
+                    <name>Adobe Basel Public Repository</name>
+                    <url>https://repo.adobe.com/nexus/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
             <pluginRepositories>
                 <pluginRepository>
                     <!-- prefer maven central plugin repo -->
@@ -118,6 +146,7 @@
                     <url>https://repo.maven.apache.org/maven2</url>
                 </pluginRepository>
                 <pluginRepository>
+                    <!-- but fall back to adobe repo for the missing things -->
                     <id>adobe-public-releases</id>
                     <name>Adobe Public Repository</name>
                     <url>https://repo.adobe.com/nexus/content/groups/public</url>
