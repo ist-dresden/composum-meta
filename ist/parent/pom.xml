@@ -108,14 +108,13 @@
                     <!-- prefer maven central plugin repo -->
                     <id>central</id>
                     <name>Central Repository</name>
+                    <url>https://repo.maven.apache.org/maven2</url>
                     <releases>
                         <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
-                    <url>https://repo.maven.apache.org/maven2</url>
                 </repository>
                 <repository>
                     <!-- but fall back to adobe repo for the missing things -->
@@ -124,7 +123,6 @@
                     <url>https://repo.adobe.com/nexus/content/groups/public</url>
                     <releases>
                         <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>false</enabled>
@@ -136,14 +134,13 @@
                     <!-- prefer maven central plugin repo -->
                     <id>central</id>
                     <name>Central Repository</name>
+                    <url>https://repo.maven.apache.org/maven2</url>
                     <releases>
                         <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
-                    <url>https://repo.maven.apache.org/maven2</url>
                 </pluginRepository>
                 <pluginRepository>
                     <!-- but fall back to adobe repo for the missing things -->
@@ -152,7 +149,6 @@
                     <url>https://repo.adobe.com/nexus/content/groups/public</url>
                     <releases>
                         <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>false</enabled>
