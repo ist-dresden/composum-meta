@@ -4,7 +4,7 @@
 
     <groupId>com.composum.meta.ist</groupId>
     <artifactId>parent-root</artifactId>
-    <version>1.8-SNAPSHOT</version>
+    <version>1.8.1</version>
     <packaging>pom</packaging>
 
     <name>IST parent root</name>
@@ -88,7 +88,7 @@
         <connection>scm:git:https://github.com/ist-dresden/composum-meta.git</connection>
         <developerConnection>scm:git:https://github.com/ist-dresden/composum-meta.git</developerConnection>
         <url>https://github.com/ist-dresden/composum-meta.git</url>
-        <tag>parent-root-1.8</tag>
+        <tag>parent-root-1.8.1</tag>
     </scm>
 
     <modules>
@@ -98,32 +98,56 @@
 
     <profiles>
         <profile>
-            <!-- profile to include adobe plugin repository -->
-            <id>plugin-repos</id>
+            <id>public-repositories</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <repositories>
+                <repository>
+                    <!-- prefer maven central plugin repo -->
+                    <id>central</id>
+                    <name>Central Repository</name>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <!-- but fall back to adobe repo for the missing things -->
+                    <id>adobe-public-releases</id>
+                    <name>Adobe Basel Public Repository</name>
+                    <url>https://repo.adobe.com/nexus/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
             <pluginRepositories>
                 <pluginRepository>
                     <!-- prefer maven central plugin repo -->
                     <id>central</id>
                     <name>Central Repository</name>
+                    <url>https://repo.maven.apache.org/maven2</url>
                     <releases>
                         <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
-                    <url>https://repo.maven.apache.org/maven2</url>
                 </pluginRepository>
                 <pluginRepository>
+                    <!-- but fall back to adobe repo for the missing things -->
                     <id>adobe-public-releases</id>
                     <name>Adobe Public Repository</name>
                     <url>https://repo.adobe.com/nexus/content/groups/public</url>
                     <releases>
                         <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>false</enabled>
