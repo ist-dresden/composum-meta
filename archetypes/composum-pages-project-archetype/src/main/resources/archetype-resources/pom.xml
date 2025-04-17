@@ -19,9 +19,9 @@
     <description>${projectdescription}</description>
 
     <properties>
-        <composum.nodes.version>4.2.1</composum.nodes.version>
-        <composum.platform.version>1.7.0</composum.platform.version>
-        <composum.pages.version>1.5.1</composum.pages.version>
+        <composum.nodes.version>4.3.5</composum.nodes.version>
+        <composum.platform.version>1.7.2</composum.platform.version>
+        <composum.pages.version>1.5.4</composum.pages.version>
     </properties>
 
     <dependencyManagement>
